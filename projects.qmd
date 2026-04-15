@@ -2,6 +2,6 @@
 title: "My Projects"
 listing:
   contents:
-    - "projects/*/index.qmd"
+    - projects/*/index.qmd
   type: grid
 ---
