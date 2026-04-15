@@ -8,6 +8,7 @@
 
 <meta name="author" content="Your Name">
 <meta name="dcterms.date" content="2026-04-15">
+<meta name="description" content="A simulation-based post on frequentist A/B testing.">
 
 <title>A/B Testing a Call to Action – quarto_website</title>
 <style>
@@ -77,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ac077c1e730dfeb5e42400639d17284e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-39fc3590519fe04b9be5cf16d3cc69a0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-4e500b5381b93be2c3b2778ffb00068f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -139,6 +140,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -160,6 +162,10 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -178,7 +184,7 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
@@ -200,17 +206,21 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">A/B Testing a Call to Action</h1>
-<p class="subtitle lead">Simulating Key Ideas from Classical Frequentist Statistics</p>
+</div>
+
+<div>
+  <div class="description">
+    A simulation-based post on frequentist A/B testing.
+  </div>
 </div>
 
 
-
-<div class="quarto-title-meta column-page-left">
+<div class="quarto-title-meta">
 
     <div>
     <div class="quarto-title-meta-heading">Author</div>
@@ -282,33 +292,33 @@ window.Quarto = {
 <style type="text/css">
 </style>
 
-<table id="T_de8fe" class="caption-top table table-sm table-striped small">
+<table id="T_fd7e5" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_de8fe_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Group</th>
-<th id="T_de8fe_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">True signup probability</th>
-<th id="T_de8fe_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Sample size</th>
-<th id="T_de8fe_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Observed signup rate</th>
+<th id="T_fd7e5_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Group</th>
+<th id="T_fd7e5_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">True signup probability</th>
+<th id="T_fd7e5_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Sample size</th>
+<th id="T_fd7e5_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Observed signup rate</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_de8fe_row0_col0" class="data row0 col0">CTA A</td>
-<td id="T_de8fe_row0_col1" class="data row0 col1">22.0%</td>
-<td id="T_de8fe_row0_col2" class="data row0 col2">1000</td>
-<td id="T_de8fe_row0_col3" class="data row0 col3">22.6%</td>
+<td id="T_fd7e5_row0_col0" class="data row0 col0">CTA A</td>
+<td id="T_fd7e5_row0_col1" class="data row0 col1">22.0%</td>
+<td id="T_fd7e5_row0_col2" class="data row0 col2">1000</td>
+<td id="T_fd7e5_row0_col3" class="data row0 col3">22.6%</td>
 </tr>
 <tr class="even">
-<td id="T_de8fe_row1_col0" class="data row1 col0">CTA B</td>
-<td id="T_de8fe_row1_col1" class="data row1 col1">18.0%</td>
-<td id="T_de8fe_row1_col2" class="data row1 col2">1000</td>
-<td id="T_de8fe_row1_col3" class="data row1 col3">17.9%</td>
+<td id="T_fd7e5_row1_col0" class="data row1 col0">CTA B</td>
+<td id="T_fd7e5_row1_col1" class="data row1 col1">18.0%</td>
+<td id="T_fd7e5_row1_col2" class="data row1 col2">1000</td>
+<td id="T_fd7e5_row1_col3" class="data row1 col3">17.9%</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="87bde86b" class="cell" data-execution_count="3">
+<div id="918ad402" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>In this simulated experiment, CTA A converted <strong>22.6%</strong> of visitors and CTA B converted <strong>17.9%</strong>. The estimated lift was <strong>4.7%</strong>, which is close to the true effect of <strong>4.0%</strong> but not identical to it—exactly what we should expect from random sampling.</p>
 </div>
@@ -357,39 +367,39 @@ window.Quarto = {
 <style type="text/css">
 </style>
 
-<table id="T_d6fe6" class="caption-top table table-sm table-striped small">
+<table id="T_4d386" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_d6fe6_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Quantity</th>
-<th id="T_d6fe6_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
+<th id="T_4d386_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Quantity</th>
+<th id="T_4d386_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_d6fe6_row0_col0" class="data row0 col0">Observed lift (theta hat)</td>
-<td id="T_d6fe6_row0_col1" class="data row0 col1">0.0470</td>
+<td id="T_4d386_row0_col0" class="data row0 col0">Observed lift (theta hat)</td>
+<td id="T_4d386_row0_col1" class="data row0 col1">0.0470</td>
 </tr>
 <tr class="even">
-<td id="T_d6fe6_row1_col0" class="data row1 col0">Bootstrap standard error</td>
-<td id="T_d6fe6_row1_col1" class="data row1 col1">0.0178</td>
+<td id="T_4d386_row1_col0" class="data row1 col0">Bootstrap standard error</td>
+<td id="T_4d386_row1_col1" class="data row1 col1">0.0178</td>
 </tr>
 <tr class="odd">
-<td id="T_d6fe6_row2_col0" class="data row2 col0">Analytical standard error</td>
-<td id="T_d6fe6_row2_col1" class="data row2 col1">0.0179</td>
+<td id="T_4d386_row2_col0" class="data row2 col0">Analytical standard error</td>
+<td id="T_4d386_row2_col1" class="data row2 col1">0.0179</td>
 </tr>
 <tr class="even">
-<td id="T_d6fe6_row3_col0" class="data row3 col0">95% CI lower bound</td>
-<td id="T_d6fe6_row3_col1" class="data row3 col1">0.0121</td>
+<td id="T_4d386_row3_col0" class="data row3 col0">95% CI lower bound</td>
+<td id="T_4d386_row3_col1" class="data row3 col1">0.0121</td>
 </tr>
 <tr class="odd">
-<td id="T_d6fe6_row4_col0" class="data row4 col0">95% CI upper bound</td>
-<td id="T_d6fe6_row4_col1" class="data row4 col1">0.0819</td>
+<td id="T_4d386_row4_col0" class="data row4 col0">95% CI upper bound</td>
+<td id="T_4d386_row4_col1" class="data row4 col1">0.0819</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="490fc58d" class="cell" data-execution_count="8">
+<div id="11674f56" class="cell" data-execution_count="8">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The bootstrap standard error is <strong>0.0178</strong>, while the analytical standard error is <strong>0.0179</strong>. They are very close, which is reassuring: the resampling approach and the Bernoulli formula are telling essentially the same story about uncertainty. Using the bootstrap standard error, the 95% confidence interval for the treatment effect is <strong>(0.0121, 0.0819)</strong>. In practical terms, this interval says that the data are consistent with CTA A improving the sign-up rate by somewhere between about <strong>1.2%</strong> and <strong>8.2%</strong>.</p>
 </div>
@@ -437,35 +447,35 @@ z = \frac{\hat\theta - 0}{SE(\hat\theta)}.
 <style type="text/css">
 </style>
 
-<table id="T_1d31b" class="caption-top table table-sm table-striped small">
+<table id="T_7edac" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_1d31b_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Statistic</th>
-<th id="T_1d31b_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
+<th id="T_7edac_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Statistic</th>
+<th id="T_7edac_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_1d31b_row0_col0" class="data row0 col0">Estimated lift</td>
-<td id="T_1d31b_row0_col1" class="data row0 col1">0.0470</td>
+<td id="T_7edac_row0_col0" class="data row0 col0">Estimated lift</td>
+<td id="T_7edac_row0_col1" class="data row0 col1">0.0470</td>
 </tr>
 <tr class="even">
-<td id="T_1d31b_row1_col0" class="data row1 col0">Standard error</td>
-<td id="T_1d31b_row1_col1" class="data row1 col1">0.0179</td>
+<td id="T_7edac_row1_col0" class="data row1 col0">Standard error</td>
+<td id="T_7edac_row1_col1" class="data row1 col1">0.0179</td>
 </tr>
 <tr class="odd">
-<td id="T_1d31b_row2_col0" class="data row2 col0">z-statistic</td>
-<td id="T_1d31b_row2_col1" class="data row2 col1">2.6197</td>
+<td id="T_7edac_row2_col0" class="data row2 col0">z-statistic</td>
+<td id="T_7edac_row2_col1" class="data row2 col1">2.6197</td>
 </tr>
 <tr class="even">
-<td id="T_1d31b_row3_col0" class="data row3 col0">p-value</td>
-<td id="T_1d31b_row3_col1" class="data row3 col1">0.0088</td>
+<td id="T_7edac_row3_col0" class="data row3 col0">p-value</td>
+<td id="T_7edac_row3_col1" class="data row3 col1">0.0088</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="fb31533c" class="cell" data-execution_count="11">
+<div id="9f749f6d" class="cell" data-execution_count="11">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The test statistic is <strong>2.62</strong>, which corresponds to a two-sided p-value of <strong>0.0088</strong>. At the conventional 5% level, we therefore <strong>reject</strong> the null hypothesis of no effect. In plain English: this simulated dataset provides fairly strong evidence that CTA A outperforms CTA B, and the estimated advantage is about <strong>4.7%</strong>.</p>
 </div>
@@ -488,30 +498,30 @@ Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
 <style type="text/css">
 </style>
 
-<table id="T_88c54" class="caption-top table table-sm table-striped small">
+<table id="T_52352" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_88c54_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Term</th>
-<th id="T_88c54_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Estimate</th>
-<th id="T_88c54_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Std. Error</th>
-<th id="T_88c54_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">t-statistic</th>
-<th id="T_88c54_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
+<th id="T_52352_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Term</th>
+<th id="T_52352_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Estimate</th>
+<th id="T_52352_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Std. Error</th>
+<th id="T_52352_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">t-statistic</th>
+<th id="T_52352_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_88c54_row0_col0" class="data row0 col0">Intercept (CTA B mean)</td>
-<td id="T_88c54_row0_col1" class="data row0 col1">0.1790</td>
-<td id="T_88c54_row0_col2" class="data row0 col2">0.0127</td>
-<td id="T_88c54_row0_col3" class="data row0 col3">14.1027</td>
-<td id="T_88c54_row0_col4" class="data row0 col4">0.0000</td>
+<td id="T_52352_row0_col0" class="data row0 col0">Intercept (CTA B mean)</td>
+<td id="T_52352_row0_col1" class="data row0 col1">0.1790</td>
+<td id="T_52352_row0_col2" class="data row0 col2">0.0127</td>
+<td id="T_52352_row0_col3" class="data row0 col3">14.1027</td>
+<td id="T_52352_row0_col4" class="data row0 col4">0.0000</td>
 </tr>
 <tr class="even">
-<td id="T_88c54_row1_col0" class="data row1 col0">CTA A indicator</td>
-<td id="T_88c54_row1_col1" class="data row1 col1">0.0470</td>
-<td id="T_88c54_row1_col2" class="data row1 col2">0.0180</td>
-<td id="T_88c54_row1_col3" class="data row1 col3">2.6184</td>
-<td id="T_88c54_row1_col4" class="data row1 col4">0.0089</td>
+<td id="T_52352_row1_col0" class="data row1 col0">CTA A indicator</td>
+<td id="T_52352_row1_col1" class="data row1 col1">0.0470</td>
+<td id="T_52352_row1_col2" class="data row1 col2">0.0180</td>
+<td id="T_52352_row1_col3" class="data row1 col3">2.6184</td>
+<td id="T_52352_row1_col4" class="data row1 col4">0.0089</td>
 </tr>
 </tbody>
 </table>
@@ -522,30 +532,30 @@ Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
 <style type="text/css">
 </style>
 
-<table id="T_410cc" class="caption-top table table-sm table-striped small">
+<table id="T_3c335" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_410cc_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Approach</th>
-<th id="T_410cc_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Estimate</th>
-<th id="T_410cc_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">SE</th>
-<th id="T_410cc_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Test statistic</th>
-<th id="T_410cc_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
+<th id="T_3c335_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Approach</th>
+<th id="T_3c335_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Estimate</th>
+<th id="T_3c335_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">SE</th>
+<th id="T_3c335_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Test statistic</th>
+<th id="T_3c335_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_410cc_row0_col0" class="data row0 col0">Two-sample test</td>
-<td id="T_410cc_row0_col1" class="data row0 col1">0.0470</td>
-<td id="T_410cc_row0_col2" class="data row0 col2">0.0179</td>
-<td id="T_410cc_row0_col3" class="data row0 col3">2.6197</td>
-<td id="T_410cc_row0_col4" class="data row0 col4">0.0088</td>
+<td id="T_3c335_row0_col0" class="data row0 col0">Two-sample test</td>
+<td id="T_3c335_row0_col1" class="data row0 col1">0.0470</td>
+<td id="T_3c335_row0_col2" class="data row0 col2">0.0179</td>
+<td id="T_3c335_row0_col3" class="data row0 col3">2.6197</td>
+<td id="T_3c335_row0_col4" class="data row0 col4">0.0088</td>
 </tr>
 <tr class="even">
-<td id="T_410cc_row1_col0" class="data row1 col0">Regression slope</td>
-<td id="T_410cc_row1_col1" class="data row1 col1">0.0470</td>
-<td id="T_410cc_row1_col2" class="data row1 col2">0.0180</td>
-<td id="T_410cc_row1_col3" class="data row1 col3">2.6184</td>
-<td id="T_410cc_row1_col4" class="data row1 col4">0.0089</td>
+<td id="T_3c335_row1_col0" class="data row1 col0">Regression slope</td>
+<td id="T_3c335_row1_col1" class="data row1 col1">0.0470</td>
+<td id="T_3c335_row1_col2" class="data row1 col2">0.0180</td>
+<td id="T_3c335_row1_col3" class="data row1 col3">2.6184</td>
+<td id="T_3c335_row1_col4" class="data row1 col4">0.0089</td>
 </tr>
 </tbody>
 </table>
@@ -565,21 +575,21 @@ Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
 <style type="text/css">
 </style>
 
-<table id="T_972ea" class="caption-top table table-sm table-striped small">
+<table id="T_258cf" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_972ea_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Procedure</th>
-<th id="T_972ea_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Empirical false positive rate</th>
+<th id="T_258cf_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Procedure</th>
+<th id="T_258cf_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Empirical false positive rate</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_972ea_row0_col0" class="data row0 col0">Single look at n = 1000</td>
-<td id="T_972ea_row0_col1" class="data row0 col1">5.5%</td>
+<td id="T_258cf_row0_col0" class="data row0 col0">Single look at n = 1000</td>
+<td id="T_258cf_row0_col1" class="data row0 col1">5.5%</td>
 </tr>
 <tr class="even">
-<td id="T_972ea_row1_col0" class="data row1 col0">Peek every 100 visitors</td>
-<td id="T_972ea_row1_col1" class="data row1 col1">19.1%</td>
+<td id="T_258cf_row1_col0" class="data row1 col0">Peek every 100 visitors</td>
+<td id="T_258cf_row1_col1" class="data row1 col1">19.1%</td>
 </tr>
 </tbody>
 </table>
@@ -594,7 +604,7 @@ Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
 </div>
 </div>
 </div>
-<div id="2fadda08" class="cell" data-execution_count="16">
+<div id="e20d063c" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>With one pre-specified look at the end of the experiment, the empirical false positive rate is about <strong>5.5%</strong>, which is exactly what we expect from a 5% test. But with repeated peeking, the false positive rate jumps to about <strong>19.1%</strong>. In other words, an apparently harmless habit of checking results early roughly quadruples the chance of declaring a winner when no real difference exists.</p>
 </div>
