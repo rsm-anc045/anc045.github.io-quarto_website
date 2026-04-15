@@ -2,7 +2,7 @@
 ---
 title: "A/B Testing a Call to Action"
 description: "A simulation-based post on frequentist A/B testing."
-author: "Your Name"
+author: "Anissa Chan"
 date: today
 jupyter: python3
 format:
