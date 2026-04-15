@@ -1,0 +1,234 @@
+---
+title: "Anissa Chan"
+image: "1744852758333.jpg"
+title-block-banner: true
+format:
+  html:
+    include-in-header:
+      text: |
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""
+        />
+        <script
+          src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""
+        ></script>
+---
+
+::: {.hero-card}
+::: {.columns .intro-grid}
+::: {.column width="36%"}
+![](1744852758333.jpg){.profile-photo}
+:::
+
+::: {.column width="64%"}
+## Hi, I’m Anissa.
+
+I’m based in the Bay Area and I’m always excited by thoughtful work, good design, and finding places worth coming back to.
+
+You can reach me at [anc045@ucsd.edu](mailto:anc045@ucsd.edu) or connect with me on [LinkedIn](https://www.linkedin.com/in/anissachan){target="_blank"}.
+:::
+:::
+:::
+
+## Home base
+
+::: {.feature-card}
+<p class="section-caption">
+The Bay Area is home for me. Want to see how far away you are? Use your current location, or click anywhere on the map to compare from another place.
+</p>
+
+<div class="map-actions">
+  <button id="locate-me" class="pill-button" type="button">Use my location</button>
+  <span class="map-hint">or click anywhere on the map</span>
+</div>
+
+<div id="home-map" aria-label="Map centered on the Bay Area"></div>
+
+<p id="distance-output" class="distance-output">
+Your distance from the Bay Area will appear here.
+</p>
+:::
+
+## Hobby
+
+::: {.feature-card}
+<p class="section-caption">
+One of my favorite things to do is finding great food and drink spots. Here are some of my favorites.
+</p>
+
+<div class="scroll-buttons">
+  <button class="scroll-btn" id="food-left" type="button" aria-label="Scroll left">←</button>
+  <button class="scroll-btn" id="food-right" type="button" aria-label="Scroll right">→</button>
+</div>
+
+::: {#favorites-track .favorites-track}
+
+::: {.favorite-card}
+<p class="favorite-kicker">Favorite eats</p>
+
+### [Tadaima Mission](https://www.google.com/maps/search/?api=1&query=Tadaima+Mission+San+Francisco+CA){target="_blank"}
+
+A repeat favorite that always makes my shortlist.
+
+[Open in Google Maps](https://www.google.com/maps/search/?api=1&query=Tadaima+Mission+San+Francisco+CA){.favorite-link target="_blank"}
+:::
+
+::: {.favorite-card}
+<p class="favorite-kicker">Favorite eats</p>
+
+### [Shanxi Magic Kitchen](https://www.google.com/maps/search/?api=1&query=Shanxi+Magic+Kitchen+San+Diego+CA){target="_blank"}
+
+One of those spots I’m always happy to go back to.
+
+[Open in Google Maps](https://www.google.com/maps/search/?api=1&query=Shanxi+Magic+Kitchen+San+Diego+CA){.favorite-link target="_blank"}
+:::
+
+::: {.favorite-card}
+<p class="favorite-kicker">Favorite eats</p>
+
+### [Ramen Nagi](https://www.google.com/maps/search/?api=1&query=Ramen+Nagi+San+Diego+CA){target="_blank"}
+
+A go-to when I want something comforting and reliable.
+
+[Open in Google Maps](https://www.google.com/maps/search/?api=1&query=Ramen+Nagi+San+Diego+CA){.favorite-link target="_blank"}
+:::
+
+::: {.favorite-card}
+<p class="favorite-kicker">Favorite eats</p>
+
+### [An’s Electronics Repair](https://www.google.com/maps/search/?api=1&query=An%27s+Electronics+Repair+San+Diego+CA){target="_blank"}
+
+A place that stands out enough to stay in regular rotation.
+
+[Open in Google Maps](https://www.google.com/maps/search/?api=1&query=An%27s+Electronics+Repair+San+Diego+CA){.favorite-link target="_blank"}
+:::
+
+::: {.favorite-card}
+<p class="favorite-kicker">Favorite drinks</p>
+
+### [Yun Tea](https://www.google.com/maps/search/?api=1&query=Yun+Tea+House+San+Diego+CA){target="_blank"}
+
+An easy favorite when I want something refreshing.
+
+[Open in Google Maps](https://www.google.com/maps/search/?api=1&query=Yun+Tea+House+San+Diego+CA){.favorite-link target="_blank"}
+:::
+
+:::
+:::
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const bayArea = {
+    label: "Bay Area",
+    lat: 37.7749,
+    lng: -122.4194,
+    zoom: 8
+  };
+
+  const map = L.map("home-map").setView([bayArea.lat, bayArea.lng], bayArea.zoom);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution: "&copy; OpenStreetMap contributors"
+  }).addTo(map);
+
+  L.marker([bayArea.lat, bayArea.lng])
+    .addTo(map)
+    .bindPopup("<strong>Bay Area</strong>")
+    .openPopup();
+
+  let visitorMarker = null;
+  let routeLine = null;
+
+  function haversineMiles(lat1, lon1, lat2, lon2) {
+    const toRad = (deg) => deg * Math.PI / 180;
+    const R = 3958.8;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) *
+      Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  }
+
+  function updateDistancePoint(lat, lng, label) {
+    if (visitorMarker) {
+      map.removeLayer(visitorMarker);
+    }
+
+    if (routeLine) {
+      map.removeLayer(routeLine);
+    }
+
+    visitorMarker = L.marker([lat, lng]).addTo(map);
+    visitorMarker.bindPopup(`<strong>${label}</strong>`).openPopup();
+
+    routeLine = L.polyline([
+      [bayArea.lat, bayArea.lng],
+      [lat, lng]
+    ]).addTo(map);
+
+    const miles = haversineMiles(bayArea.lat, bayArea.lng, lat, lng);
+    const km = miles * 1.60934;
+
+    document.getElementById("distance-output").textContent =
+      `${label} is about ${miles.toFixed(0)} miles (${km.toFixed(0)} km) from the Bay Area.`;
+
+    map.fitBounds(routeLine.getBounds(), { padding: [40, 40] });
+  }
+
+  document.getElementById("locate-me").addEventListener("click", function () {
+    const output = document.getElementById("distance-output");
+
+    if (!navigator.geolocation) {
+      output.textContent = "Location access is not available in this browser. You can still click anywhere on the map to compare from another place.";
+      return;
+    }
+
+    output.textContent = "Finding your location...";
+
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        updateDistancePoint(
+          position.coords.latitude,
+          position.coords.longitude,
+          "You"
+        );
+      },
+      function () {
+        output.textContent = "I couldn’t access your location. You can still click anywhere on the map to compare from another place.";
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0
+      }
+    );
+  });
+
+  map.on("click", function (e) {
+    updateDistancePoint(e.latlng.lat, e.latlng.lng, "Selected point");
+  });
+
+  const track = document.getElementById("favorites-track");
+
+  document.getElementById("food-left").addEventListener("click", function () {
+    track.scrollBy({ left: -340, behavior: "smooth" });
+  });
+
+  document.getElementById("food-right").addEventListener("click", function () {
+    track.scrollBy({ left: 340, behavior: "smooth" });
+  });
+});
+</script>

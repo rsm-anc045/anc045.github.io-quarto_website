@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Anissa Chan",
+    "section": "",
+    "text": "I’m based in the Bay Area and I’m always excited by thoughtful work, good design, and finding places worth coming back to.\nYou can reach me at anc045@ucsd.edu or connect with me on LinkedIn."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "resume.html",
+    "href": "resume.html",
+    "title": "My Resume",
+    "section": "",
+    "text": "Download PDF file."
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "My Projects",
+    "section": "",
+    "text": "No matching items"
+  },
+  {
+    "objectID": "index.html#where-i-live",
+    "href": "index.html#where-i-live",
+    "title": "Anissa Chan",
+    "section": "Where I live",
+    "text": "Where I live\n\nThis map is pinned to the Bay Area right now.\n\nTo permanently change the location later, just update the lat, lng, label, and zoom values in the script below.\nVisitors can also click on the map to preview their own pin, but because this is a static Quarto site, those click-added pins are only temporary unless you connect the page to a database/backend.\n\n\n\n\n\nClick anywhere on the map to preview a different pin."
+  },
+  {
+    "objectID": "index.html#linkedin-posts",
+    "href": "index.html#linkedin-posts",
+    "title": "Anissa Chan",
+    "section": "LinkedIn posts",
+    "text": "LinkedIn posts\n\n\n← →\n\n\n\n\n\nThis section works best when you paste in the direct links to your public LinkedIn posts."
+  },
+  {
+    "objectID": "index.html#hi-im-anissa.",
+    "href": "index.html#hi-im-anissa.",
+    "title": "Anissa Chan",
+    "section": "",
+    "text": "I’m based in the Bay Area and I’m always excited by thoughtful work, good design, and finding places worth coming back to.\nYou can reach me at anc045@ucsd.edu or connect with me on LinkedIn."
+  },
+  {
+    "objectID": "index.html#home-base",
+    "href": "index.html#home-base",
+    "title": "Anissa Chan",
+    "section": "Home base",
+    "text": "Home base\n\n\nThe Bay Area is home for me. Want to see how far away you are? Use your current location, or click anywhere on the map to compare from another place.\n\n\nUse my location or click anywhere on the map\n\n\n\n\n\nYour distance from the Bay Area will appear here."
+  },
+  {
+    "objectID": "index.html#hobby",
+    "href": "index.html#hobby",
+    "title": "Anissa Chan",
+    "section": "Hobby",
+    "text": "Hobby\n\n\nOne of my favorite things to do is finding great food and drink spots. Here are some of my favorites.\n\n\n← →\n\n\n\n\nFavorite eats\n\n\nTadaima Mission\nA repeat favorite that always makes my shortlist.\nOpen in Google Maps\n\n\n\n\nFavorite eats\n\n\nShanxi Magic Kitchen\nOne of those spots I’m always happy to go back to.\nOpen in Google Maps\n\n\n\n\nFavorite eats\n\n\nRamen Nagi\nA go-to when I want something comforting and reliable.\nOpen in Google Maps\n\n\n\n\nFavorite eats\n\n\nAn’s Electronics Repair\nA place that stands out enough to stay in regular rotation.\nOpen in Google Maps\n\n\n\n\nFavorite drinks\n\n\nYun Tea\nAn easy favorite when I want something refreshing.\nOpen in Google Maps"
+  },
+  {
+    "objectID": "index.html#hobby-1",
+    "href": "index.html#hobby-1",
+    "title": "Anissa Chan",
+    "section": "Hobby",
+    "text": "Hobby\n\n\nOne of my favorite things to do is finding out good food or drink places. Here are a list of some of my favorites.\n\n\n← →\n\n\n\n\nFavorite eats\n\n\n Tadaima Mission \n\n\nA repeat favorite that always makes my shortlist.\n\n\n  &lt;a class=\"favorite-link\" href=\"https://www.yelp.com/search?find_desc=Tadaima+Mission&find_loc=San+Francisco%2C+CA\" target=\"_blank\" rel=\"noopener noreferrer\"&gt;View on Yelp&lt;/a&gt;\n&lt;/div&gt;\n\n\n\nFavorite eats\n\n\n Shanxi Magic Kitchen \n\n\nOne of those spots I’m always happy to go back to.\n\n\n  &lt;a class=\"favorite-link\" href=\"https://www.yelp.com/search?find_desc=Shanxi+Magic+Kitchen&find_loc=San+Diego%2C+CA\" target=\"_blank\" rel=\"noopener noreferrer\"&gt;View on Yelp&lt;/a&gt;\n&lt;/div&gt;\n\n\n\nFavorite eats\n\n\n Ramen Nagi \n\n\nA go-to when I want something comforting and reliable.\n\n\n  &lt;a class=\"favorite-link\" href=\"https://www.yelp.com/search?find_desc=Ramen+Nagi&find_loc=San+Diego%2C+CA\" target=\"_blank\" rel=\"noopener noreferrer\"&gt;View on Yelp&lt;/a&gt;\n&lt;/div&gt;\n\n\n\nFavorite eats\n\n\n An’s Electronics Repair \n\n\nA place that stands out enough to stay in regular rotation.\n\n\n  &lt;a class=\"favorite-link\" href=\"https://www.yelp.com/search?find_desc=An%27s+Electronics+Repair&find_loc=San+Diego%2C+CA\" target=\"_blank\" rel=\"noopener noreferrer\"&gt;View on Yelp&lt;/a&gt;\n&lt;/div&gt;\n\n\n\nFavorite eats\n\n\n Yun Tea \n\n\nAn easy favorite when I want something refreshing.\n\n\n  &lt;a class=\"favorite-link\" href=\"https://www.yelp.com/search?find_desc=Yun+Tea+House&find_loc=San+Diego%2C+CA\" target=\"_blank\" rel=\"noopener noreferrer\"&gt;View on Yelp&lt;/a&gt;\n&lt;/div&gt;\n\n\n:::"
+  }
+]
