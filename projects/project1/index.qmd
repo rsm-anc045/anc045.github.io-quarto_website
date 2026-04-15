@@ -1,6 +1,7 @@
+
 ---
-title: A/B Testing a Call to Action
-subtitle: "Simulating Key Ideas from Classical Frequentist Statistics"
+title: "A/B Testing a Call to Action"
+description: "A simulation-based post on frequentist A/B testing."
 author: "Your Name"
 date: today
 jupyter: python3
