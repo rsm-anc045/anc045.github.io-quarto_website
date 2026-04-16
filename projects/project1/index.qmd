@@ -21,7 +21,6 @@ execute:
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
 from scipy import stats
 import statsmodels.api as sm
 from IPython.display import Markdown, display
@@ -60,8 +59,9 @@ pi_hat_A = cta_a.mean()
 pi_hat_B = cta_b.mean()
 theta_hat = pi_hat_A - pi_hat_B
 
-differences  = cta_a - cta_b
-running_mean = np.cumsum(differences) / np.arange(1, n + 1)
+running_pi_A = np.cumsum(cta_a) / np.arange(1, n + 1)
+running_pi_B = np.cumsum(cta_b) / np.arange(1, n + 1)
+running_theta = running_pi_A - running_pi_B
 
 # ── Bootstrap ────────────────────────────────────────────────────────────────
 rng_boot = np.random.default_rng(496)
@@ -212,15 +212,21 @@ display(Markdown(
 
 ## The Law of Large Numbers
 
-The **Law of Large Numbers (LLN)** says that as the sample size grows, the sample mean converges to the population mean. In the A/B testing setting, that is what makes $\hat\theta = \bar X_A - \bar X_B$ a sensible estimator: with enough observations, the difference in sample averages should settle down near the true difference in conversion rates.
+The **Law of Large Numbers (LLN)** says that as the sample size grows, the sample mean converges to the population mean. In the A/B testing setting, that means the cumulative conversion rate within each group should settle down near its true probability, and the difference between those cumulative rates should settle down near the true treatment effect.
 
-To make that concrete, I compute the element-wise differences between the simulated CTA A and CTA B outcomes and then track their cumulative average after 1 observation, 2 observations, and so on up to 1,000.
+To show that, I track the running conversion rate for CTA A and CTA B separately. After the first $k$ visitors in each group, the running treatment effect is just the difference between the two cumulative sample conversion rates,
+
+$$
+\hat\theta_k = \left(\frac{1}{k}\sum_{i=1}^k X_{Ai}\right) - \left(\frac{1}{k}\sum_{i=1}^k X_{Bi}\right).
+$$
 
 ```{python}
 #| label: lln-code
 #| echo: true
 #| output: false
-running_mean = np.cumsum(cta_a - cta_b) / np.arange(1, n + 1)
+running_pi_A = np.cumsum(cta_a) / np.arange(1, n + 1)
+running_pi_B = np.cumsum(cta_b) / np.arange(1, n + 1)
+running_theta = running_pi_A - running_pi_B
 ```
 
 ```{python}
@@ -228,23 +234,26 @@ running_mean = np.cumsum(cta_a - cta_b) / np.arange(1, n + 1)
 #| echo: false
 fig, ax = plt.subplots()
 
-ax.plot(np.arange(1, n + 1), running_mean,
-        color=BLUE, linewidth=2, label="Running estimate $\\hat{\\theta}$")
-ax.axhline(theta_true, color=ORANGE, linestyle="--", linewidth=2,
-           label=f"True effect $\\theta$ = {theta_true}")
-ax.axhline(0, color=GRAY, linestyle=":", linewidth=1, alpha=0.6)
+x = np.arange(1, n + 1)
+ax.plot(x, running_pi_A, color=BLUE, linewidth=2.2, label="Running signup rate: CTA A")
+ax.plot(x, running_pi_B, color=ORANGE, linewidth=2.2, label="Running signup rate: CTA B")
+ax.plot(x, running_theta, color=GRAY, linewidth=2, linestyle="-.", label="Running lift $\\tilde{\\theta}_k$")
 
-ax.set_xlabel("Number of paired observations")
-ax.set_ylabel("Cumulative average of  A − B")
-ax.set_title("Law of Large Numbers: the estimate converges to the truth")
-ax.legend(frameon=False)
+ax.axhline(pi_A, color=BLUE, linestyle="--", linewidth=1.5, alpha=0.8, label=f"True $\\pi_A$ = {pi_A:.2f}")
+ax.axhline(pi_B, color=ORANGE, linestyle="--", linewidth=1.5, alpha=0.8, label=f"True $\\pi_B$ = {pi_B:.2f}")
+ax.axhline(theta_true, color=GRAY, linestyle=":", linewidth=1.5, alpha=0.9, label=f"True $\\theta$ = {theta_true:.2f}")
+
+ax.set_xlabel("Visitors observed per group")
+ax.set_ylabel("Conversion rate / estimated lift")
+ax.set_title("Law of Large Numbers: group averages stabilize with more data")
+ax.legend(frameon=False, ncol=2, fontsize=9)
 plt.tight_layout()
 plt.show()
 ```
 
-At the beginning of the plot, the running average jumps around dramatically because a handful of sign-ups or non-sign-ups can swing the estimate substantially. As the sample grows, that volatility shrinks and the line stabilizes near the true effect of 0.04. The lesson is not that large samples eliminate randomness—they do not—but that they make randomness less important relative to the signal we are trying to measure.
+At the beginning of the experiment, the running rates move around a lot because a few extra sign-ups can change the estimate substantially. As more visitors arrive, both group averages settle down: CTA A stabilizes near 0.22, CTA B stabilizes near 0.18, and their difference settles near the true lift of 0.04. That is exactly the LLN in action.
 
-This is the first major promise of frequentist inference: repeated sampling gives us a principled way to think about how close our estimator should be to the truth.
+This is the first major promise of frequentist inference: repeated sampling gives us a principled way to think about how close our estimators should be to the truth.
 
 ## Bootstrap Standard Errors
 
@@ -381,7 +390,7 @@ H_0: \theta = 0
 H_1: \theta \neq 0.
 $$
 
-Under the null, the two CTAs have the same true sign-up rate. To evaluate that claim, we standardize our estimate by dividing it by its standard error:
+Under the null, the two CTAs have the same true sign-up rate. To evaluate that claim, I use a large-sample Wald-style z-test, which standardizes the estimated lift by its estimated standard error:
 
 $$
 z = \frac{\hat\theta - 0}{SE(\hat\theta)}.
@@ -392,6 +401,8 @@ This standardization matters for three reasons.
 1. By the CLT, $\hat\theta$ is approximately Normal in large samples.
 2. Under $H_0$, that approximate Normal distribution is centered at 0.
 3. Dividing by the standard error converts the estimate into a unit-free quantity that is approximately standard Normal under the null, which lets us compute a p-value.
+
+In this post I estimate that standard error directly from the two observed Bernoulli samples. That is slightly different from the pooled standard error sometimes used in an introductory two-proportion z-test, but the logic is the same: in a large sample, both approaches lead to essentially the same conclusion here.
 
 This is often casually called a "t-test," but in this Bernoulli setting the label is slightly misleading. The classical t-statistic has an exact t-distribution when the data are Normally distributed and the variance is estimated. Here the raw data are binary, not Normal, so there is no exact t-distribution result to lean on. What justifies the test is the CLT, which makes the statistic approximately Normal in large samples. In practice, once the sample is large, the difference between a t reference distribution and a standard Normal reference distribution is negligible.
 
@@ -416,7 +427,7 @@ display(Markdown(
 ))
 ```
 
-## The T-Test as a Regression
+## The A/B Test as a Regression
 
 The same comparison can be written as a simple regression. Stack the two groups into one dataset with an outcome variable $Y_i$ that equals 1 if visitor $i$ signs up and 0 otherwise, and a treatment indicator $D_i$ that equals 1 if the visitor saw CTA A and 0 if they saw CTA B. Then estimate
 
@@ -466,7 +477,7 @@ comparison_df.style.hide(axis="index").format({
 })
 ```
 
-The point estimates are identical, and the test statistics and p-values are essentially the same. Any small difference in the standard errors comes from the exact variance formula being used. In the simple two-group case, the regression is not adding new information—but it *is* giving us a more general language.
+The point estimates are identical, and the test statistics and p-values are essentially the same. Any small difference in the standard errors comes from the exact variance formula being used. In this binary-outcome setting, OLS is acting as a simple linear probability model, so the regression is not adding new information in the two-group case—but it *is* giving us a more general language.
 
 That matters because real experiments rarely stay this simple. Once you understand the regression framing, it becomes natural to add customer covariates, interactions, multiple treatment arms, or fixed effects while preserving the same basic logic of causal comparison.
 

@@ -198,7 +198,7 @@ window.Quarto = {
   <li><a href="#bootstrap-standard-errors" id="toc-bootstrap-standard-errors" class="nav-link" data-scroll-target="#bootstrap-standard-errors"><span class="header-section-number">5</span> Bootstrap Standard Errors</a></li>
   <li><a href="#the-central-limit-theorem" id="toc-the-central-limit-theorem" class="nav-link" data-scroll-target="#the-central-limit-theorem"><span class="header-section-number">6</span> The Central Limit Theorem</a></li>
   <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">7</span> Hypothesis Testing</a></li>
-  <li><a href="#the-t-test-as-a-regression" id="toc-the-t-test-as-a-regression" class="nav-link" data-scroll-target="#the-t-test-as-a-regression"><span class="header-section-number">8</span> The T-Test as a Regression</a></li>
+  <li><a href="#the-ab-test-as-a-regression" id="toc-the-ab-test-as-a-regression" class="nav-link" data-scroll-target="#the-ab-test-as-a-regression"><span class="header-section-number">8</span> The A/B Test as a Regression</a></li>
   <li><a href="#the-problem-with-peeking" id="toc-the-problem-with-peeking" class="nav-link" data-scroll-target="#the-problem-with-peeking"><span class="header-section-number">9</span> The Problem with Peeking</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">10</span> Conclusion</a></li>
   </ul>
@@ -287,33 +287,33 @@ window.Quarto = {
 <style type="text/css">
 </style>
 
-<table id="T_85501" class="caption-top table table-sm table-striped small">
+<table id="T_71c62" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_85501_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Group</th>
-<th id="T_85501_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">True signup probability</th>
-<th id="T_85501_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Sample size</th>
-<th id="T_85501_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Observed signup rate</th>
+<th id="T_71c62_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Group</th>
+<th id="T_71c62_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">True signup probability</th>
+<th id="T_71c62_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Sample size</th>
+<th id="T_71c62_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Observed signup rate</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_85501_row0_col0" class="data row0 col0">CTA A</td>
-<td id="T_85501_row0_col1" class="data row0 col1">22.0%</td>
-<td id="T_85501_row0_col2" class="data row0 col2">1000</td>
-<td id="T_85501_row0_col3" class="data row0 col3">22.6%</td>
+<td id="T_71c62_row0_col0" class="data row0 col0">CTA A</td>
+<td id="T_71c62_row0_col1" class="data row0 col1">22.0%</td>
+<td id="T_71c62_row0_col2" class="data row0 col2">1000</td>
+<td id="T_71c62_row0_col3" class="data row0 col3">22.6%</td>
 </tr>
 <tr class="even">
-<td id="T_85501_row1_col0" class="data row1 col0">CTA B</td>
-<td id="T_85501_row1_col1" class="data row1 col1">18.0%</td>
-<td id="T_85501_row1_col2" class="data row1 col2">1000</td>
-<td id="T_85501_row1_col3" class="data row1 col3">17.9%</td>
+<td id="T_71c62_row1_col0" class="data row1 col0">CTA B</td>
+<td id="T_71c62_row1_col1" class="data row1 col1">18.0%</td>
+<td id="T_71c62_row1_col2" class="data row1 col2">1000</td>
+<td id="T_71c62_row1_col3" class="data row1 col3">17.9%</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="9b61beb6" class="cell" data-execution_count="3">
+<div id="09196829" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>In this simulated experiment, CTA A converted <strong>22.6%</strong> of visitors and CTA B converted <strong>17.9%</strong>. The estimated lift was <strong>4.7%</strong>, which is close to the true effect of <strong>4.0%</strong> but not identical to it—exactly what we should expect from random sampling.</p>
 </div>
@@ -321,10 +321,15 @@ window.Quarto = {
 </section>
 <section id="the-law-of-large-numbers" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="the-law-of-large-numbers"><span class="header-section-number">4</span> The Law of Large Numbers</h2>
-<p>The <strong>Law of Large Numbers (LLN)</strong> says that as the sample size grows, the sample mean converges to the population mean. In the A/B testing setting, that is what makes <span class="math inline">\(\hat\theta = \bar X_A - \bar X_B\)</span> a sensible estimator: with enough observations, the difference in sample averages should settle down near the true difference in conversion rates.</p>
-<p>To make that concrete, I compute the element-wise differences between the simulated CTA A and CTA B outcomes and then track their cumulative average after 1 observation, 2 observations, and so on up to 1,000.</p>
+<p>The <strong>Law of Large Numbers (LLN)</strong> says that as the sample size grows, the sample mean converges to the population mean. In the A/B testing setting, that means the cumulative conversion rate within each group should settle down near its true probability, and the difference between those cumulative rates should settle down near the true treatment effect.</p>
+<p>To show that, I track the running conversion rate for CTA A and CTA B separately. After the first <span class="math inline">\(k\)</span> visitors in each group, the running treatment effect is just the difference between the two cumulative sample conversion rates,</p>
+<p><span class="math display">\[
+\hat\theta_k = \left(\frac{1}{k}\sum_{i=1}^k X_{Ai}\right) - \left(\frac{1}{k}\sum_{i=1}^k X_{Bi}\right).
+\]</span></p>
 <div id="lln-code" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>running_mean <span class="op">=</span> np.cumsum(cta_a <span class="op">-</span> cta_b) <span class="op">/</span> np.arange(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>running_pi_A <span class="op">=</span> np.cumsum(cta_a) <span class="op">/</span> np.arange(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>running_pi_B <span class="op">=</span> np.cumsum(cta_b) <span class="op">/</span> np.arange(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>running_theta <span class="op">=</span> running_pi_A <span class="op">-</span> running_pi_B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="cell-lln-plot" class="cell" data-execution_count="5">
 <div class="cell-output cell-output-display">
@@ -335,8 +340,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p>At the beginning of the plot, the running average jumps around dramatically because a handful of sign-ups or non-sign-ups can swing the estimate substantially. As the sample grows, that volatility shrinks and the line stabilizes near the true effect of 0.04. The lesson is not that large samples eliminate randomness—they do not—but that they make randomness less important relative to the signal we are trying to measure.</p>
-<p>This is the first major promise of frequentist inference: repeated sampling gives us a principled way to think about how close our estimator should be to the truth.</p>
+<p>At the beginning of the experiment, the running rates move around a lot because a few extra sign-ups can change the estimate substantially. As more visitors arrive, both group averages settle down: CTA A stabilizes near 0.22, CTA B stabilizes near 0.18, and their difference settles near the true lift of 0.04. That is exactly the LLN in action.</p>
+<p>This is the first major promise of frequentist inference: repeated sampling gives us a principled way to think about how close our estimators should be to the truth.</p>
 </section>
 <section id="bootstrap-standard-errors" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="bootstrap-standard-errors"><span class="header-section-number">5</span> Bootstrap Standard Errors</h2>
@@ -375,39 +380,39 @@ window.Quarto = {
 <style type="text/css">
 </style>
 
-<table id="T_c3f07" class="caption-top table table-sm table-striped small">
+<table id="T_728b4" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_c3f07_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Quantity</th>
-<th id="T_c3f07_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
+<th id="T_728b4_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Quantity</th>
+<th id="T_728b4_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_c3f07_row0_col0" class="data row0 col0">Observed lift ($\hat{\theta}$)</td>
-<td id="T_c3f07_row0_col1" class="data row0 col1">0.0470</td>
+<td id="T_728b4_row0_col0" class="data row0 col0">Observed lift ($\hat{\theta}$)</td>
+<td id="T_728b4_row0_col1" class="data row0 col1">0.0470</td>
 </tr>
 <tr class="even">
-<td id="T_c3f07_row1_col0" class="data row1 col0">Bootstrap standard error</td>
-<td id="T_c3f07_row1_col1" class="data row1 col1">0.0179</td>
+<td id="T_728b4_row1_col0" class="data row1 col0">Bootstrap standard error</td>
+<td id="T_728b4_row1_col1" class="data row1 col1">0.0179</td>
 </tr>
 <tr class="odd">
-<td id="T_c3f07_row2_col0" class="data row2 col0">Analytical standard error</td>
-<td id="T_c3f07_row2_col1" class="data row2 col1">0.0179</td>
+<td id="T_728b4_row2_col0" class="data row2 col0">Analytical standard error</td>
+<td id="T_728b4_row2_col1" class="data row2 col1">0.0179</td>
 </tr>
 <tr class="even">
-<td id="T_c3f07_row3_col0" class="data row3 col0">95% CI lower bound</td>
-<td id="T_c3f07_row3_col1" class="data row3 col1">0.0120</td>
+<td id="T_728b4_row3_col0" class="data row3 col0">95% CI lower bound</td>
+<td id="T_728b4_row3_col1" class="data row3 col1">0.0120</td>
 </tr>
 <tr class="odd">
-<td id="T_c3f07_row4_col0" class="data row4 col0">95% CI upper bound</td>
-<td id="T_c3f07_row4_col1" class="data row4 col1">0.0820</td>
+<td id="T_728b4_row4_col0" class="data row4 col0">95% CI upper bound</td>
+<td id="T_728b4_row4_col1" class="data row4 col1">0.0820</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="cf05f2fc" class="cell" data-execution_count="9">
+<div id="aa7ab21c" class="cell" data-execution_count="9">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The bootstrap standard error is <strong>0.0179</strong>, while the analytical standard error is <strong>0.0179</strong>. They are very close, which is reassuring: the resampling approach and the Bernoulli formula are telling essentially the same story about uncertainty. Using the bootstrap standard error, the 95% confidence interval for the treatment effect is <strong>(0.0120, 0.0820)</strong>. In practical terms, this interval says that the data are consistent with CTA A improving the sign-up rate by somewhere between <strong>1.2%</strong> and <strong>8.2%</strong>.</p>
 </div>
@@ -439,7 +444,7 @@ H_0: \theta = 0
 \qquad \text{versus} \qquad
 H_1: \theta \neq 0.
 \]</span></p>
-<p>Under the null, the two CTAs have the same true sign-up rate. To evaluate that claim, we standardize our estimate by dividing it by its standard error:</p>
+<p>Under the null, the two CTAs have the same true sign-up rate. To evaluate that claim, I use a large-sample Wald-style z-test, which standardizes the estimated lift by its estimated standard error:</p>
 <p><span class="math display">\[
 z = \frac{\hat\theta - 0}{SE(\hat\theta)}.
 \]</span></p>
@@ -449,48 +454,49 @@ z = \frac{\hat\theta - 0}{SE(\hat\theta)}.
 <li>Under <span class="math inline">\(H_0\)</span>, that approximate Normal distribution is centered at 0.</li>
 <li>Dividing by the standard error converts the estimate into a unit-free quantity that is approximately standard Normal under the null, which lets us compute a p-value.</li>
 </ol>
+<p>In this post I estimate that standard error directly from the two observed Bernoulli samples. That is slightly different from the pooled standard error sometimes used in an introductory two-proportion z-test, but the logic is the same: in a large sample, both approaches lead to essentially the same conclusion here.</p>
 <p>This is often casually called a “t-test,” but in this Bernoulli setting the label is slightly misleading. The classical t-statistic has an exact t-distribution when the data are Normally distributed and the variance is estimated. Here the raw data are binary, not Normal, so there is no exact t-distribution result to lean on. What justifies the test is the CLT, which makes the statistic approximately Normal in large samples. In practice, once the sample is large, the difference between a t reference distribution and a standard Normal reference distribution is negligible.</p>
 <div id="cell-hypothesis-results" class="cell" data-execution_count="11">
 <div id="hypothesis-results" class="cell-output cell-output-display" data-execution_count="11">
 <style type="text/css">
 </style>
 
-<table id="T_e1f02" class="caption-top table table-sm table-striped small">
+<table id="T_8c16c" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_e1f02_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Statistic</th>
-<th id="T_e1f02_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
+<th id="T_8c16c_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Statistic</th>
+<th id="T_8c16c_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_e1f02_row0_col0" class="data row0 col0">Estimated lift</td>
-<td id="T_e1f02_row0_col1" class="data row0 col1">0.0470</td>
+<td id="T_8c16c_row0_col0" class="data row0 col0">Estimated lift</td>
+<td id="T_8c16c_row0_col1" class="data row0 col1">0.0470</td>
 </tr>
 <tr class="even">
-<td id="T_e1f02_row1_col0" class="data row1 col0">Standard error</td>
-<td id="T_e1f02_row1_col1" class="data row1 col1">0.0179</td>
+<td id="T_8c16c_row1_col0" class="data row1 col0">Standard error</td>
+<td id="T_8c16c_row1_col1" class="data row1 col1">0.0179</td>
 </tr>
 <tr class="odd">
-<td id="T_e1f02_row2_col0" class="data row2 col0">z-statistic</td>
-<td id="T_e1f02_row2_col1" class="data row2 col1">2.6197</td>
+<td id="T_8c16c_row2_col0" class="data row2 col0">z-statistic</td>
+<td id="T_8c16c_row2_col1" class="data row2 col1">2.6197</td>
 </tr>
 <tr class="even">
-<td id="T_e1f02_row3_col0" class="data row3 col0">p-value</td>
-<td id="T_e1f02_row3_col1" class="data row3 col1">0.0088</td>
+<td id="T_8c16c_row3_col0" class="data row3 col0">p-value</td>
+<td id="T_8c16c_row3_col1" class="data row3 col1">0.0088</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="e336ce0d" class="cell" data-execution_count="12">
+<div id="5f50693a" class="cell" data-execution_count="12">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>The test statistic is <strong>2.62</strong>, which corresponds to a two-sided p-value of <strong>0.0088</strong>. At the conventional 5% level, we therefore <strong>reject</strong> the null hypothesis of no effect. In plain English: this simulated dataset provides fairly strong evidence that CTA A outperforms CTA B, and the estimated advantage is about <strong>4.7%</strong>.</p>
 </div>
 </div>
 </section>
-<section id="the-t-test-as-a-regression" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="the-t-test-as-a-regression"><span class="header-section-number">8</span> The T-Test as a Regression</h2>
+<section id="the-ab-test-as-a-regression" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="the-ab-test-as-a-regression"><span class="header-section-number">8</span> The A/B Test as a Regression</h2>
 <p>The same comparison can be written as a simple regression. Stack the two groups into one dataset with an outcome variable <span class="math inline">\(Y_i\)</span> that equals 1 if visitor <span class="math inline">\(i\)</span> signs up and 0 otherwise, and a treatment indicator <span class="math inline">\(D_i\)</span> that equals 1 if the visitor saw CTA A and 0 if they saw CTA B. Then estimate</p>
 <p><span class="math display">\[
 Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
@@ -506,30 +512,30 @@ Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
 <style type="text/css">
 </style>
 
-<table id="T_7fd80" class="caption-top table table-sm table-striped small">
+<table id="T_03e77" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_7fd80_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Term</th>
-<th id="T_7fd80_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Estimate</th>
-<th id="T_7fd80_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Std. Error</th>
-<th id="T_7fd80_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">t-statistic</th>
-<th id="T_7fd80_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
+<th id="T_03e77_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Term</th>
+<th id="T_03e77_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Estimate</th>
+<th id="T_03e77_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Std. Error</th>
+<th id="T_03e77_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">t-statistic</th>
+<th id="T_03e77_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_7fd80_row0_col0" class="data row0 col0">Intercept (CTA B mean)</td>
-<td id="T_7fd80_row0_col1" class="data row0 col1">0.1790</td>
-<td id="T_7fd80_row0_col2" class="data row0 col2">0.0127</td>
-<td id="T_7fd80_row0_col3" class="data row0 col3">14.1027</td>
-<td id="T_7fd80_row0_col4" class="data row0 col4">0.0000</td>
+<td id="T_03e77_row0_col0" class="data row0 col0">Intercept (CTA B mean)</td>
+<td id="T_03e77_row0_col1" class="data row0 col1">0.1790</td>
+<td id="T_03e77_row0_col2" class="data row0 col2">0.0127</td>
+<td id="T_03e77_row0_col3" class="data row0 col3">14.1027</td>
+<td id="T_03e77_row0_col4" class="data row0 col4">0.0000</td>
 </tr>
 <tr class="even">
-<td id="T_7fd80_row1_col0" class="data row1 col0">CTA A indicator</td>
-<td id="T_7fd80_row1_col1" class="data row1 col1">0.0470</td>
-<td id="T_7fd80_row1_col2" class="data row1 col2">0.0180</td>
-<td id="T_7fd80_row1_col3" class="data row1 col3">2.6184</td>
-<td id="T_7fd80_row1_col4" class="data row1 col4">0.0089</td>
+<td id="T_03e77_row1_col0" class="data row1 col0">CTA A indicator</td>
+<td id="T_03e77_row1_col1" class="data row1 col1">0.0470</td>
+<td id="T_03e77_row1_col2" class="data row1 col2">0.0180</td>
+<td id="T_03e77_row1_col3" class="data row1 col3">2.6184</td>
+<td id="T_03e77_row1_col4" class="data row1 col4">0.0089</td>
 </tr>
 </tbody>
 </table>
@@ -540,36 +546,36 @@ Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
 <style type="text/css">
 </style>
 
-<table id="T_3cda6" class="caption-top table table-sm table-striped small">
+<table id="T_6d7ba" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_3cda6_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Approach</th>
-<th id="T_3cda6_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Estimate</th>
-<th id="T_3cda6_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">SE</th>
-<th id="T_3cda6_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Test statistic</th>
-<th id="T_3cda6_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
+<th id="T_6d7ba_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Approach</th>
+<th id="T_6d7ba_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Estimate</th>
+<th id="T_6d7ba_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">SE</th>
+<th id="T_6d7ba_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">Test statistic</th>
+<th id="T_6d7ba_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">p-value</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_3cda6_row0_col0" class="data row0 col0">Two-sample test</td>
-<td id="T_3cda6_row0_col1" class="data row0 col1">0.0470</td>
-<td id="T_3cda6_row0_col2" class="data row0 col2">0.0179</td>
-<td id="T_3cda6_row0_col3" class="data row0 col3">2.6197</td>
-<td id="T_3cda6_row0_col4" class="data row0 col4">0.0088</td>
+<td id="T_6d7ba_row0_col0" class="data row0 col0">Two-sample test</td>
+<td id="T_6d7ba_row0_col1" class="data row0 col1">0.0470</td>
+<td id="T_6d7ba_row0_col2" class="data row0 col2">0.0179</td>
+<td id="T_6d7ba_row0_col3" class="data row0 col3">2.6197</td>
+<td id="T_6d7ba_row0_col4" class="data row0 col4">0.0088</td>
 </tr>
 <tr class="even">
-<td id="T_3cda6_row1_col0" class="data row1 col0">Regression slope</td>
-<td id="T_3cda6_row1_col1" class="data row1 col1">0.0470</td>
-<td id="T_3cda6_row1_col2" class="data row1 col2">0.0180</td>
-<td id="T_3cda6_row1_col3" class="data row1 col3">2.6184</td>
-<td id="T_3cda6_row1_col4" class="data row1 col4">0.0089</td>
+<td id="T_6d7ba_row1_col0" class="data row1 col0">Regression slope</td>
+<td id="T_6d7ba_row1_col1" class="data row1 col1">0.0470</td>
+<td id="T_6d7ba_row1_col2" class="data row1 col2">0.0180</td>
+<td id="T_6d7ba_row1_col3" class="data row1 col3">2.6184</td>
+<td id="T_6d7ba_row1_col4" class="data row1 col4">0.0089</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<p>The point estimates are identical, and the test statistics and p-values are essentially the same. Any small difference in the standard errors comes from the exact variance formula being used. In the simple two-group case, the regression is not adding new information—but it <em>is</em> giving us a more general language.</p>
+<p>The point estimates are identical, and the test statistics and p-values are essentially the same. Any small difference in the standard errors comes from the exact variance formula being used. In this binary-outcome setting, OLS is acting as a simple linear probability model, so the regression is not adding new information in the two-group case—but it <em>is</em> giving us a more general language.</p>
 <p>That matters because real experiments rarely stay this simple. Once you understand the regression framing, it becomes natural to add customer covariates, interactions, multiple treatment arms, or fixed effects while preserving the same basic logic of causal comparison.</p>
 </section>
 <section id="the-problem-with-peeking" class="level2" data-number="9">
@@ -583,21 +589,21 @@ Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
 <style type="text/css">
 </style>
 
-<table id="T_6afea" class="caption-top table table-sm table-striped small">
+<table id="T_96c20" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_6afea_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Procedure</th>
-<th id="T_6afea_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Empirical false positive rate</th>
+<th id="T_96c20_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Procedure</th>
+<th id="T_96c20_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Empirical false positive rate</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_6afea_row0_col0" class="data row0 col0">Single look at n = 1,000</td>
-<td id="T_6afea_row0_col1" class="data row0 col1">5.5%</td>
+<td id="T_96c20_row0_col0" class="data row0 col0">Single look at n = 1,000</td>
+<td id="T_96c20_row0_col1" class="data row0 col1">5.5%</td>
 </tr>
 <tr class="even">
-<td id="T_6afea_row1_col0" class="data row1 col0">Peek every 100 visitors (10 looks)</td>
-<td id="T_6afea_row1_col1" class="data row1 col1">19.1%</td>
+<td id="T_96c20_row1_col0" class="data row1 col0">Peek every 100 visitors (10 looks)</td>
+<td id="T_96c20_row1_col1" class="data row1 col1">19.1%</td>
 </tr>
 </tbody>
 </table>
@@ -612,7 +618,7 @@ Y_i = \beta_0 + \beta_1 D_i + \varepsilon_i.
 </div>
 </div>
 </div>
-<div id="e5629db6" class="cell" data-execution_count="17">
+<div id="0e723c83" class="cell" data-execution_count="17">
 <div class="cell-output cell-output-display cell-output-markdown">
 <p>With one pre-specified look at the end of the experiment, the empirical false positive rate is about <strong>5.5%</strong>—right at the nominal 5%. But with repeated peeking, the false positive rate climbs to about <strong>19.1%</strong>. The left-hand chart makes this even clearer: the contamination does not arrive all at once; it accumulates with every additional look, so stopping early actually makes the problem worse, not better. An apparently harmless habit of checking results early roughly <strong>3×</strong> the chance of declaring a winner when no real difference exists.</p>
 </div>
