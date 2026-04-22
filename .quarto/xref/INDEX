@@ -28,5 +28,8 @@
   },
   "quarto-cognitive-biases/cognitive-biases-presentation.qmd": {
     "cognitive-biases-presentation.html": "dc1f3fdb"
+  },
+  "quarto-cognitive-biases/index.qmd": {
+    "index.html": "eb5622b1"
   }
 }

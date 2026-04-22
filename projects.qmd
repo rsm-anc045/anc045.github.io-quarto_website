@@ -3,5 +3,7 @@ title: "My Projects"
 listing:
   contents:
     - projects/*/index.qmd
+    - projects/project2/index.qmd
+    - projects/project3/index.qmd
   type: grid
 ---
