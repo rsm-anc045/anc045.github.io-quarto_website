@@ -1,9 +1,11 @@
 ---
 title: "Cognitive Biases & Heuristics"
-description: "A Quarto Revealjs presentation on anchoring effect, confirmation bias, and availability heuristic."
+description: "A Quarto Reveal presentation on anchoring effect, confirmation bias, and availability heuristic."
 format: html
 ---
 
 ## Project 3
+
+This project is a Quarto presentation about common cognitive biases in analytics.
 
 [Open the presentation](slides.html)
