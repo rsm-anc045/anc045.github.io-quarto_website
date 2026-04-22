@@ -19,5 +19,14 @@
   },
   "hw1_questions_improved.qmd": {
     "hw1_questions_improved.html": "045339ea"
+  },
+  "projects/project2/index.qmd": {
+    "index.html": "f9220565"
+  },
+  "projects/project3/index.qmd": {
+    "index.html": "1d53df70"
+  },
+  "quarto-cognitive-biases/cognitive-biases-presentation.qmd": {
+    "cognitive-biases-presentation.html": "dc1f3fdb"
   }
 }

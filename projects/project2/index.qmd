@@ -52,7 +52,7 @@ plt.rcParams.update({
 
 # ── Data loader ─────────────────────────────────────────────────────────────
 def load_final4(drop_missing_avgverb=False):
-    df = pd.read_stata("final4.dta")
+    df = pd.read_stata("dataverse_files/final4.dta")
 
     # Fix scores > 100 (coding artifact documented in Stata do files)
     for col in ["avgverb", "avgmath"]:
