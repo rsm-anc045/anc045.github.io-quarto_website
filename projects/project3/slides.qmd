@@ -1,10 +1,7 @@
 ---
-title: "Cognitive Biases & Heuristics"
-author: "Anissa Chan"
 format:
   revealjs:
     theme: simple
-    title-slide: false
     width: 1280
     height: 720
     margin: 0.04
@@ -18,8 +15,6 @@ format:
     hash: true
     css: styles.css
 ---
-
-## {background-color="#f8fafc"}
 
 ::: {.hero}
 ::: {.eyebrow}
