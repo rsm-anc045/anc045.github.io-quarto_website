@@ -4,14 +4,14 @@
     "href": "projects/project3/index.html",
     "title": "Cognitive Biases & Heuristics",
     "section": "",
-    "text": "This project is a Quarto presentation about common cognitive biases in analytics.\nOpen the presentation"
+    "text": "Open the presentation"
   },
   {
     "objectID": "projects/project3/index.html#project-3",
     "href": "projects/project3/index.html#project-3",
     "title": "Cognitive Biases & Heuristics",
     "section": "",
-    "text": "This project is a Quarto presentation about common cognitive biases in analytics.\nOpen the presentation"
+    "text": "Open the presentation"
   },
   {
     "objectID": "projects/project2/index.html",
@@ -196,13 +196,6 @@
     "text": "10 Conclusion\nThis simple CTA experiment turns out to be a compact tour of classical frequentist statistics.\n\nModeling each visitor as a Bernoulli draw gave us a clean estimand: the difference in conversion rates.\nThe Law of Large Numbers showed why the sample difference in means is a sensible estimator.\nThe bootstrap and the analytical formula both quantified uncertainty through a standard error, and agreed closely with each other.\nThe Central Limit Theorem justified approximate Normal inference even though the raw data were binary.\nHypothesis testing translated the estimate into a z-statistic and a p-value.\nRegression reproduced the same comparison in a framework that scales naturally to richer experimental designs.\nAnd the peeking simulation showed how easy it is to break nominal Type I error guarantees by repeatedly checking for significance.\n\nThat is the frequentist mindset in one example: probability is about repeated sampling, estimators are random because samples are random, and the reliability of our conclusions depends as much on the procedure we use as on the specific numbers we observe."
   },
   {
-    "objectID": "projects/project3/slides.html#cognitive-biases-heuristics",
-    "href": "projects/project3/slides.html#cognitive-biases-heuristics",
-    "title": "Cognitive Biases & Heuristics",
-    "section": "Cognitive Biases & Heuristics",
-    "text": "Cognitive Biases & Heuristics\n\n\nData analytics presentation\n\n\nCognitive Biases & Heuristics\n\nHow anchoring, confirmation bias, and availability heuristic can shape analysis, decisions, and experiments.\n\n\n\nAnissa Chan\n\n\nMGTA 495\n\n\n\n\n\n\nEveryone has some sort of bias. Whether that be preferring cheeseburgers over hotdogs or fantasy over sci-fi. It affects everything: who we hang out with, what we believe, how we interact with the world. Data is no different. In this presentation, I will focus on three common examples: anchoring effect, confirmation bias, and the availability heuristic."
-  },
-  {
     "objectID": "projects/project3/slides.html#why-this-matters-in-analytics",
     "href": "projects/project3/slides.html#why-this-matters-in-analytics",
     "title": "quarto_website",
@@ -243,12 +236,5 @@
     "title": "quarto_website",
     "section": "Sources",
     "text": "Sources\n\n\nFlorida Museum: Yearly Worldwide Shark Attack Summary\nHarvard PON: Anchoring Effect\nPenn SAS: Cognitive Bias and Data\nOxford Review: Confirmation Bias"
-  },
-  {
-    "objectID": "projects/project3/slides.html#section",
-    "href": "projects/project3/slides.html#section",
-    "title": "Cognitive Biases & Heuristics",
-    "section": "",
-    "text": "Data analytics presentation\n\n\nCognitive Biases & Heuristics\n\n\nHow anchoring, confirmation bias, and availability heuristic can shape analysis, decisions, and experiments.\n\n\n\nAnissa Chan\n\n\nMGTA 495\n\n\n\n\nEveryone has some sort of bias. Whether that be preferring cheeseburgers over hotdogs or fantasy over sci-fi. It affects everything: who we hang out with, what we believe, how we interact with the world. Data is no different. In this presentation, I will focus on three common examples: anchoring effect, confirmation bias, and the availability heuristic."
   }
 ]
