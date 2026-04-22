@@ -4,6 +4,7 @@ author: "Anissa Chan"
 format:
   revealjs:
     theme: simple
+    title-slide: false
     width: 1280
     height: 720
     margin: 0.04
@@ -18,14 +19,16 @@ format:
     css: styles.css
 ---
 
-## Cognitive Biases & Heuristics {background-color="#f8fafc"}
+## {background-color="#f8fafc"}
 
-:::: {.hero}
+::: {.hero}
 ::: {.eyebrow}
 Data analytics presentation
 :::
 
-# Cognitive Biases & Heuristics
+::: {.hero-title}
+Cognitive Biases & Heuristics
+:::
 
 ::: {.hero-subtitle}
 How anchoring, confirmation bias, and availability heuristic can shape analysis, decisions, and experiments.
@@ -40,7 +43,7 @@ Anissa Chan
 MGTA 495
 :::
 ::::
-::::
+:::
 
 ::: {.notes}
 Everyone has some sort of bias. Whether that be preferring cheeseburgers over hotdogs or fantasy over sci-fi. It affects everything: who we hang out with, what we believe, how we interact with the world. Data is no different. In this presentation, I will focus on three common examples: anchoring effect, confirmation bias, and the availability heuristic.

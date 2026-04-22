@@ -6,6 +6,4 @@ format: html
 
 ## Project 3
 
-This project is a Quarto presentation about common cognitive biases in analytics.
-
 [Open the presentation](slides.html)

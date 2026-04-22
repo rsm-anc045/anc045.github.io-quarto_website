@@ -248,3 +248,11 @@
     font-size: 2.4rem;
   }
 }
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #111827;
+  margin-bottom: 0.8rem;
+}
