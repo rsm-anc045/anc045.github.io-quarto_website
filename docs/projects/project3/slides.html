@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-0fde88a82f0356838740f155f1088782.css">
   <link rel="stylesheet" href="styles.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
@@ -139,24 +139,30 @@ Anissa Chan
 </div>
 
 </section>
-<section class="slide level2">
+<section id="cognitive-biases-heuristics" class="slide level2" data-background-color="#f8fafc">
+<h2>Cognitive Biases &amp; Heuristics</h2>
+<div class="hero">
+<div class="eyebrow">
+<p>Data analytics presentation</p>
+</div>
+<section id="cognitive-biases-heuristics-1" class="title-slide slide level1 center">
+<h1>Cognitive Biases &amp; Heuristics</h1>
+<div class="hero-subtitle">
+<p>How anchoring, confirmation bias, and availability heuristic can shape analysis, decisions, and experiments.</p>
+</div>
+<div class="hero-footer">
+<div class="hero-name">
+<p>Anissa Chan</p>
+</div>
+<div class="hero-tag">
+<p>MGTA 495</p>
+</div>
+</div>
+</section>
 
-<div class="slide-frame title-slide center">
-<div class="top-gradient">
-
-</div>
-<div class="main-title">
-Cognitive Biases &amp; Heuristics
-</div>
-<div class="line">
-
-</div>
-<div class="author">
-Anissa<br>Chan
-</div>
 </div>
 <aside class="notes">
-<p>Everyone has some sort of bias. Whether that be preferring cheeseburgers over hotdogs or fantasy over sci-fi. It affects everything: who we hangout with, what we believe, how we interact with the world. Data is no different even when it seems like it is. That’s why in this presentation I would like to inform you about the different types of cognitive biases and heuristics, particularly the anchoring effect, confirmation bias, and the availability heuristic.</p>
+<p>Everyone has some sort of bias. Whether that be preferring cheeseburgers over hotdogs or fantasy over sci-fi. It affects everything: who we hang out with, what we believe, how we interact with the world. Data is no different. In this presentation, I will focus on three common examples: anchoring effect, confirmation bias, and the availability heuristic.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -169,27 +175,48 @@ Anissa<br>Chan
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2">
-
-<div class="slide-frame">
-<p><img class="contain-img" src="assets/anchoring-cars.png" alt="Anchoring effect car pricing example" style="left: 3px; top: 50px; width: 506px; height: 513px;"></p>
-<div class="slide-title" style="left: 509px; top: 90px; width: 449px;">
-Anchoring Effect
+<section id="why-this-matters-in-analytics" class="slide level2">
+<h2>Why this matters in analytics</h2>
+<div class="grid-3">
+<section id="bias-is-normal" class="mini-card">
+<h3>Bias is normal</h3>
+<p>Bias affects how we interpret patterns, frame questions, and judge results.</p>
+</section>
+<section id="data-is-not-immune" class="mini-card">
+<h3>Data is not immune</h3>
+<p>Even with data, analysts can still overweight certain evidence and miss better explanations.</p>
+</section>
+<section id="better-process-helps" class="mini-card">
+<h3>Better process helps</h3>
+<p>Good experimental design, critical thinking, and deliberate review reduce the risk.</p>
+</section>
 </div>
-<div class="body-copy" style="left: 519px; top: 158px; width: 449px;">
-<pre><code>&lt;span class="label"&gt;What is it?&lt;/span&gt;
-&lt;ul&gt;
-  &lt;li&gt;Overreliance on first information seen.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style="height: 18px;"&gt;&lt;/div&gt;
-&lt;span class="label"&gt;Seen in Data Analysis&lt;/span&gt;
-&lt;ul&gt;
-  &lt;li&gt;Updated information is neglected&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+<div class="takeaway">
+<p><strong>Main idea:</strong> the goal is not to eliminate human judgment, but to recognize where it can distort analysis.</p>
 </div>
+</section>
+<section id="anchoring-effect" class="slide level2">
+<h2>Anchoring Effect</h2>
+<div class="columns">
+<div class="column" style="width:56%;">
+<div class="concept-card">
+<h3 id="what-is-it">What is it?</h3>
+<p>Overreliance on the first piece of information seen.</p>
+<h3 id="why-it-matters-in-data-analysis">Why it matters in data analysis</h3>
+<ul>
+<li>Early assumptions can shape later interpretation.</li>
+<li>Updated evidence may get discounted.</li>
+<li>Initial benchmarks can make later values feel misleadingly high or low.</li>
+</ul>
 </div>
+<div class="speaker-prompt">
+<p><strong>Example:</strong> if someone first sees a car priced at 60k, then 30k feels like a bargain. If they first see 30k, it can feel expensive.</p>
+</div>
+</div><div class="column" style="width:44%;">
+<p><img data-src="assets/anchoring-cars.png" class="feature-figure" alt="Anchoring effect car pricing example"></p>
+</div></div>
 <aside class="notes">
-<p>Let’s first talk about the Anchoring Effect. According to Harvard, “the anchoring effect is a cognitive bias…[of] relying too heavily on the first piece of information offered”. We see an example of this in the picture to the left. On the top, the customer sees the price tag of 30k for this new car, which he remarks as too expensive. However, what if he had seen the 60k price tag first and then saw the second price tag of 30k. Well, relatively the 30k seems like a good deal comparatively, right? That is what the Anchoring Effect is. We see this in Data Analytics where newer information can become neglected as we lean onto previous insights.</p>
+<p>The anchoring effect is relying too heavily on the first piece of information offered. In analytics, this can happen when we anchor on an early metric, an initial forecast, or a first read of a dataset and then underreact to newer evidence.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -202,28 +229,34 @@ Anchoring Effect
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2">
-
-<div class="slide-frame">
-<div class="slide-title" style="left: 51px; top: 105px; width: 449px;">
-Confirmation Bias
+<section id="confirmation-bias" class="slide level2">
+<h2>Confirmation Bias</h2>
+<div class="columns">
+<div class="column" style="width:55%;">
+<div class="concept-card">
+<h3 id="what-is-it-1">What is it?</h3>
+<p>The tendency to seek, interpret, and remember information that supports existing beliefs.</p>
+<h3 id="why-it-matters-in-data-analysis-1">Why it matters in data analysis</h3>
+<ul>
+<li>Experiments may be designed to confirm what we already think.</li>
+<li>Conflicting results may get ignored or explained away.</li>
+<li>New ideas can be passed over before they are fully explored.</li>
+</ul>
 </div>
-<div class="body-copy" style="left: 68px; top: 166px; width: 351px;">
-<pre><code>&lt;span class="label"&gt;What is it?&lt;/span&gt;
-&lt;ul&gt;
-  &lt;li&gt;Tendency to ignore information that does not affirm preset beliefs&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style="height: 18px;"&gt;&lt;/div&gt;
-&lt;span class="label"&gt;Seen in Data Analysis&lt;/span&gt;
-&lt;ul&gt;
-  &lt;li&gt;Experiments are ran to confirm beliefs&lt;/li&gt;
-  &lt;li&gt;New ideas passed over&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+<div class="speaker-prompt">
+<p><strong>Everyday example:</strong> searching until you find the answer you wanted all along.</p>
 </div>
-<p><img class="contain-img" src="assets/confirmation-venn.png" alt="Confirmation bias diagram" style="left: 450px; top: 67px; width: 518px; height: 428px;"> <img class="contain-img fragment fade-in" data-fragment-index="1" src="assets/confirmation-blueberries.jpeg" alt="Blueberries photo" style="left: 437px; top: 16px; width: 542px; height: 362px;"> <img class="contain-img fragment fade-in" data-fragment-index="2" src="assets/confirmation-typing.gif" alt="Typing GIF" style="left: 450px; top: 242px; width: 518px; height: 311px;"></p>
+</div><div class="column" style="width:45%;">
+<p><img data-src="assets/confirmation-venn.png" class="feature-figure" alt="Confirmation bias diagram"></p>
+<div class="fragment">
+<p><img data-src="assets/confirmation-blueberries.jpeg" class="feature-figure feature-figure-small" alt="Blueberries photo"></p>
 </div>
+<div class="fragment">
+<p><img data-src="assets/confirmation-typing.gif" class="feature-figure feature-figure-small" alt="Typing GIF"></p>
+</div>
+</div></div>
 <aside class="notes">
-<p>Next, we will talk about a confirmation bias. A confirmation bias is, according to the Oxford Review, “the tendency of individuals to seek, interpret, and remember information in a way that confirms their pre-existing beliefs or values”. What this leads to is ignoring information that doesn’t coincide with other beliefs. Let me give you an example from my own personal life. As someone who tries to eat healthy and grocery shops for themselves, I tend to buy many perishables. However, many perishables like fruit and vegetables don’t have an expiration date written on them. Many times, I come across the situation where a product say blueberries that I bought only four day ago have started to grow some mold, which probably means they’re coming up at time they should be thrown out. Wait, doesn’t that mean I should be eating them soon? but I really really don’t want to and they’re supposed to last longer that. So I’ll search up on Google “how long do blueberries last in the fridge?”. I’ll be scrolling and scrolling until I find range of days that satisfies me. That is what confirmation bias is. We see this in data analysis and experimentation where we tend to run experiment or in fact, interpret the information from experiment as something that already confirms our beliefs, hindering our critical thinking about what truly could be the driver of causality as an example. The data collected from this as well could have created newer, interesting ideas which are then ignored due to this bias.</p>
+<p>Confirmation bias is the tendency to seek and interpret information in ways that confirm pre-existing beliefs. A simple example is searching online until you find a result that supports what you wanted to believe. In analytics, this can show up in both experiment design and interpretation.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -236,28 +269,31 @@ Confirmation Bias
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2">
-
-<div class="slide-frame">
-<p><img class="contain-img" src="assets/availability-cartoon.png" alt="Availability heuristic illustration" style="left: 38px; top: 133px; width: 445px; height: 297px;"> <img class="contain-img fragment fade-in" data-fragment-index="1" src="assets/availability-table.png" alt="Shark attack table" style="left: 32px; top: 101px; width: 455px; height: 361px;"></p>
-<div class="slide-title" style="left: 509px; top: 90px; width: 449px;">
-Availability heuristic
+<section id="availability-heuristic" class="slide level2">
+<h2>Availability Heuristic</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><img data-src="assets/availability-cartoon.png" class="feature-figure" alt="Availability heuristic illustration"></p>
+<div class="fragment">
+<p><img data-src="assets/availability-table.png" class="feature-figure feature-figure-small" alt="Shark attack table"></p>
 </div>
-<div class="body-copy" style="left: 519px; top: 158px; width: 449px;">
-<pre><code>&lt;span class="label"&gt;What is it?&lt;/span&gt;
-&lt;ul&gt;
-  &lt;li&gt;Tendency to rely on memorable ideas and events&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div style="height: 18px;"&gt;&lt;/div&gt;
-&lt;span class="label"&gt;Seen in Data Analysis&lt;/span&gt;
-&lt;ul&gt;
-  &lt;li&gt;Overemphasize information that is more memorable&lt;/li&gt;
-  &lt;li&gt;Ignoring information that is less memorable&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
+</div><div class="column" style="width:55%;">
+<div class="concept-card">
+<h3 id="what-is-it-2">What is it?</h3>
+<p>The tendency to rely on memorable or vivid examples when making judgments.</p>
+<h3 id="why-it-matters-in-data-analysis-2">Why it matters in data analysis</h3>
+<ul>
+<li>Striking events can feel more common than they really are.</li>
+<li>Analysts may overemphasize dramatic findings.</li>
+<li>Less memorable but still important evidence can be overlooked.</li>
+</ul>
 </div>
+<div class="speaker-prompt">
+<p><strong>Example:</strong> shark attacks feel common because they are memorable, even though actual incidents are rare.</p>
 </div>
+</div></div>
 <aside class="notes">
-<p>Finally, we will talk about the availability heuristic. The availability heuristic focuses on how we as humans tend to recall upon ideas and events that more memorable, usually in situations in which the information is surprising, shocking, or bad. It’s why many people fear the ocean as they are afraid that a shark might bite them like seen in movies like Jaws and new reports of shark attacks. Even though the International Shark Attack File of 2025 reported that worldwide there were only 65 unprovoked shark bites on humans and 29 provoked bites. In the US, there were only 26 total shark bites with a majority of them being in Florida. Now, how does this relate to data analysis. Well, in terms of data, we will tend to focus on the information that carries more impact while pushing to the side information that isn’t even when the information found can be relevant.</p>
+<p>The availability heuristic causes us to lean on examples that are easy to recall. In practice, that often means surprising, emotional, or highly publicized events. In data work, this can push us toward the most memorable result rather than the most representative one.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -270,16 +306,31 @@ Availability heuristic
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2">
-
-<div class="slide-frame">
-<div class="center-title" style="top: 182px;">
-Conclusion
+<section id="how-to-reduce-bias-in-practice" class="slide level2">
+<h2>How to reduce bias in practice</h2>
+<div class="grid-2">
+<section id="revisit-first-assumptions" class="action-card">
+<h3>Revisit first assumptions</h3>
+<p>Pause and ask whether the original benchmark still makes sense.</p>
+</section>
+<section id="look-for-disconfirming-evidence" class="action-card">
+<h3>Look for disconfirming evidence</h3>
+<p>Actively search for information that challenges your preferred explanation.</p>
+</section>
+<div class="action-card fragment">
+<h3 id="use-stronger-methods">Use stronger methods</h3>
+<p>Randomization, blind testing, and clear experimental design reduce bias.</p>
 </div>
-<p><img class="bottom-photo" src="assets/bottom-photo.jpg" alt="Desk photo"></p>
+<div class="action-card fragment">
+<h3 id="review-full-context">Review full context</h3>
+<p>Consider outliers, alternatives, and less memorable evidence before concluding.</p>
+</div>
+</div>
+<div class="takeaway">
+<p><strong>Conclusion:</strong> biases and heuristics are part of everyday thinking, so stronger analysis depends on recognizing them and building guardrails against them.</p>
 </div>
 <aside class="notes">
-<p>In conclusion, biases and heuristics are part of our everyday way of thinking. As analyst and experimenters, it is our duty to catch ourselves on these, using techniques like critical thinking and taking outliers into account, and create ways to not let them affect our practices like through randomization and blind testing. I hope that knowing more about these effects will help you all in your analytics journey. Thank you!</p>
+<p>In conclusion, biases and heuristics are part of everyday thinking. As analysts and experimenters, we need to catch ourselves when they appear and use good process, like critical thinking, randomization, blind testing, and broader evidence review, to reduce their impact.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -292,19 +343,15 @@ Conclusion
           display:block!important;
       }</style></aside>
 </section>
-<section class="slide level2">
-
-<div class="slide-frame">
-<div class="sources-title">
-Sources
-</div>
-<div class="sources-list small-links">
-<pre><code>&lt;div&gt;&lt;a href="https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/"&gt;https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href="https://www.pon.harvard.edu/tag/anchoring-effect/"&gt;https://www.pon.harvard.edu/tag/anchoring-effect/&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href="https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation"&gt;https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href="https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/"&gt;https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/&lt;/a&gt;&lt;/div&gt;</code></pre>
-</div>
-<p><img class="bottom-photo" src="assets/bottom-photo.jpg" alt="Desk photo"></p>
+<section id="sources" class="slide level2">
+<h2>Sources</h2>
+<div class="sources-grid">
+<ul>
+<li><a href="https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/">Florida Museum: Yearly Worldwide Shark Attack Summary</a></li>
+<li><a href="https://www.pon.harvard.edu/tag/anchoring-effect/">Harvard PON: Anchoring Effect</a></li>
+<li><a href="https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation">Penn SAS: Cognitive Bias and Data</a></li>
+<li><a href="https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/">Oxford Review: Confirmation Bias</a></li>
+</ul>
 </div>
 
 
@@ -362,7 +409,7 @@ Sources
         controlsBackArrows: 'faded',
 
         // Display a presentation progress bar
-        progress: false,
+        progress: true,
 
         // Display the page number of the current slide
         slideNumber: false,
@@ -470,14 +517,14 @@ Sources
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'fade',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -490,12 +537,12 @@ Sources
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1000,
+        width: 1280,
 
-        height: 562,
+        height: 720,
 
         // Factor of the display size that should remain empty around the content
-        margin: 0,
+        margin: 4.0e-2,
 
         math: {
           mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
