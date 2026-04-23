@@ -35,7 +35,7 @@ format:
 
 ## Availability Heuristic
 
-<div class="two-col"><div class="visual-column stack-tight"><img src="assets/availability-cartoon.png" alt="Cartoon illustration about the availability heuristic."><img src="assets/availability-table.png" alt="Table showing shark bite counts by U.S. state."></div><div class="text-panel"><div class="label">What is it?</div><ul><li>Tendency to rely on memorable ideas and events.</li></ul><div class="label gap-top">Seen in Data Analysis</div><ul><li>Overemphasizing information that is more memorable.</li><li>Ignoring information that is less memorable.</li></ul></div></div>
+<div class="two-col"><div class="visual-column stack-tight"><img src="assets/availability-cartoon.png" alt="Cartoon illustration about the availability heuristic." style="max-width: 100%; max-height: 280px; width: auto; height: auto;"><img src="assets/availability-table.png" alt="Table showing shark bite counts by U.S. state." style="max-width: 100%; max-height: 280px; width: auto; height: auto;"></div><div class="text-panel"><div class="label">What is it?</div><ul><li>Tendency to rely on memorable ideas and events.</li></ul><div class="label gap-top">Seen in Data Analysis</div><ul><li>Overemphasizing information that is more memorable.</li><li>Ignoring information that is less memorable.</li></ul></div></div>
 
 ## Conclusion
 
