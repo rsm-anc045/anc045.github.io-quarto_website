@@ -98,48 +98,6 @@
     "text": "A/B Testing a Call to Action\n\n\n\n\n\n\nAnissa Chan\n\n\nApr 22, 2026\n\n\n\n\n\n\n\n\n\n\n\nCognitive Biases & Heuristics\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReplication of Angrist and Lavy (1999)\n\n\n\n\n\n\nAnissa Chan\n\n\nApr 22, 2026\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "slides.html#why-this-matters-in-analytics",
-    "href": "slides.html#why-this-matters-in-analytics",
-    "title": "quarto_website",
-    "section": "Why this matters in analytics",
-    "text": "Why this matters in analytics\n\n\nBias is normal\nBias affects how we interpret patterns, frame questions, and judge results.\n\n\nData is not immune\nEven with data, analysts can still overweight certain evidence and miss better explanations.\n\n\nBetter process helps\nGood experimental design, critical thinking, and deliberate review reduce the risk.\n\n\n\nMain idea: the goal is not to eliminate human judgment, but to recognize where it can distort analysis."
-  },
-  {
-    "objectID": "slides.html#anchoring-effect",
-    "href": "slides.html#anchoring-effect",
-    "title": "quarto_website",
-    "section": "Anchoring Effect",
-    "text": "Anchoring Effect\n\n\n\nWhat is it?\nOverreliance on the first piece of information seen.\nWhy it matters in data analysis\n\nEarly assumptions can shape later interpretation.\nUpdated evidence may get discounted.\nInitial benchmarks can make later values feel misleadingly high or low.\n\n\n\nExample: if someone first sees a car priced at 60k, then 30k feels like a bargain. If they first see 30k, it can feel expensive.\n\n\n\n\n\nThe anchoring effect is relying too heavily on the first piece of information offered. In analytics, this can happen when we anchor on an early metric, an initial forecast, or a first read of a dataset and then underreact to newer evidence."
-  },
-  {
-    "objectID": "slides.html#confirmation-bias",
-    "href": "slides.html#confirmation-bias",
-    "title": "quarto_website",
-    "section": "Confirmation Bias",
-    "text": "Confirmation Bias\n\n\n\nWhat is it?\nThe tendency to seek, interpret, and remember information that supports existing beliefs.\nWhy it matters in data analysis\n\nExperiments may be designed to confirm what we already think.\nConflicting results may get ignored or explained away.\nNew ideas can be passed over before they are fully explored.\n\n\n\nEveryday example: searching until you find the answer you wanted all along.\n\n\n\n\n\n\n\n\n\n\n\nConfirmation bias is the tendency to seek and interpret information in ways that confirm pre-existing beliefs. A simple example is searching online until you find a result that supports what you wanted to believe. In analytics, this can show up in both experiment design and interpretation."
-  },
-  {
-    "objectID": "slides.html#availability-heuristic",
-    "href": "slides.html#availability-heuristic",
-    "title": "quarto_website",
-    "section": "Availability Heuristic",
-    "text": "Availability Heuristic\n\n\n\n\n\n\n\n\nWhat is it?\nThe tendency to rely on memorable or vivid examples when making judgments.\nWhy it matters in data analysis\n\nStriking events can feel more common than they really are.\nAnalysts may overemphasize dramatic findings.\nLess memorable but still important evidence can be overlooked.\n\n\n\nExample: shark attacks feel common because they are memorable, even though actual incidents are rare.\n\n\n\nThe availability heuristic causes us to lean on examples that are easy to recall. In practice, that often means surprising, emotional, or highly publicized events. In data work, this can push us toward the most memorable result rather than the most representative one."
-  },
-  {
-    "objectID": "slides.html#how-to-reduce-bias-in-practice",
-    "href": "slides.html#how-to-reduce-bias-in-practice",
-    "title": "quarto_website",
-    "section": "How to reduce bias in practice",
-    "text": "How to reduce bias in practice\n\n\nRevisit first assumptions\nPause and ask whether the original benchmark still makes sense.\n\n\nLook for disconfirming evidence\nActively search for information that challenges your preferred explanation.\n\n\nUse stronger methods\nRandomization, blind testing, and clear experimental design reduce bias.\n\n\nReview full context\nConsider outliers, alternatives, and less memorable evidence before concluding.\n\n\n\nConclusion: biases and heuristics are part of everyday thinking, so stronger analysis depends on recognizing them and building guardrails against them.\n\n\nIn conclusion, biases and heuristics are part of everyday thinking. As analysts and experimenters, we need to catch ourselves when they appear and use good process, like critical thinking, randomization, blind testing, and broader evidence review, to reduce their impact."
-  },
-  {
-    "objectID": "slides.html#sources",
-    "href": "slides.html#sources",
-    "title": "quarto_website",
-    "section": "Sources",
-    "text": "Sources\n\n\nFlorida Museum: Yearly Worldwide Shark Attack Summary\nHarvard PON: Anchoring Effect\nPenn SAS: Cognitive Bias and Data\nOxford Review: Confirmation Bias"
-  },
-  {
     "objectID": "resume.html",
     "href": "resume.html",
     "title": "My Resume",
