@@ -193,21 +193,21 @@
     "href": "projects/project3/slides.html#anchoring-effect",
     "title": "Cognitive Biases & Heuristics",
     "section": "Anchoring Effect",
-    "text": "Anchoring Effect\n\n\n&lt;img src=\"assets/anchoring-cars.png\" alt=\"Illustration of the anchoring effect using two car prices.\"&gt;\n\n\n&lt;div class=\"label\"&gt;What is it?&lt;/div&gt;\n&lt;ul&gt;\n  &lt;li&gt;Overreliance on first information seen.&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;div class=\"label gap-top\"&gt;Seen in Data Analysis&lt;/div&gt;\n&lt;ul&gt;\n  &lt;li&gt;Updated information is neglected.&lt;/li&gt;\n&lt;/ul&gt;"
+    "text": "Anchoring Effect\n\n\n\n\n\n\nWhat is it?\n\n\n\nOverreliance on first information seen.\n\n\n\nSeen in Data Analysis\n\n\n\nUpdated information is neglected."
   },
   {
     "objectID": "projects/project3/slides.html#confirmation-bias",
     "href": "projects/project3/slides.html#confirmation-bias",
     "title": "Cognitive Biases & Heuristics",
     "section": "Confirmation Bias",
-    "text": "Confirmation Bias\n\n\n&lt;div class=\"label\"&gt;What is it?&lt;/div&gt;\n&lt;ul&gt;\n  &lt;li&gt;Tendency to ignore information that does not affirm preset beliefs.&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;div class=\"label gap-top\"&gt;Seen in Data Analysis&lt;/div&gt;\n&lt;ul&gt;\n  &lt;li&gt;Experiments are run to confirm beliefs.&lt;/li&gt;\n  &lt;li&gt;New ideas are passed over.&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;img src=\"assets/confirmation-venn.png\" alt=\"Diagram showing confirmation bias as overlap between all evidence and our beliefs.\"&gt;"
+    "text": "Confirmation Bias\n\n\n\nWhat is it?\n\n\n\nTendency to ignore information that does not affirm preset beliefs.\n\n\n\nSeen in Data Analysis\n\n\n\nExperiments are run to confirm beliefs.\n\n\nNew ideas are passed over."
   },
   {
     "objectID": "projects/project3/slides.html#availability-heuristic",
     "href": "projects/project3/slides.html#availability-heuristic",
     "title": "Cognitive Biases & Heuristics",
     "section": "Availability Heuristic",
-    "text": "Availability Heuristic\n\n\n&lt;img src=\"assets/availability-cartoon.png\" alt=\"Cartoon illustration about the availability heuristic.\"&gt;\n&lt;img src=\"assets/availability-table.png\" alt=\"Table showing shark bite counts by U.S. state.\"&gt;\n\n\n&lt;div class=\"label\"&gt;What is it?&lt;/div&gt;\n&lt;ul&gt;\n  &lt;li&gt;Tendency to rely on memorable ideas and events.&lt;/li&gt;\n&lt;/ul&gt;\n\n&lt;div class=\"label gap-top\"&gt;Seen in Data Analysis&lt;/div&gt;\n&lt;ul&gt;\n  &lt;li&gt;Overemphasizing information that is more memorable.&lt;/li&gt;\n  &lt;li&gt;Ignoring information that is less memorable.&lt;/li&gt;\n&lt;/ul&gt;"
+    "text": "Availability Heuristic\n\n\n\n\n\n\nWhat is it?\n\n\n\nTendency to rely on memorable ideas and events.\n\n\n\nSeen in Data Analysis\n\n\n\nOveremphasizing information that is more memorable.\n\n\nIgnoring information that is less memorable."
   },
   {
     "objectID": "projects/project3/slides.html#conclusion",
