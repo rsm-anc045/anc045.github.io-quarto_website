@@ -1,5 +1,12 @@
 ---
 title: "Cognitive Biases & Heuristics"
+format:
+  html:
+    css: styles.css
 ---
 
-[Open slides](slides.html)
+# Cognitive Biases & Heuristics
+
+A Quarto-ready remake of the uploaded presentation, styled to match the linked useR2022-inspired revealjs look while keeping the original slide content.
+
+- [Open the slides](slides.html)

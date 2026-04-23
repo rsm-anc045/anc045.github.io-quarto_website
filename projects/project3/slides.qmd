@@ -1,4 +1,6 @@
 ---
+title: "Cognitive Biases & Heuristics"
+author: "Anissa Chan"
 format:
   revealjs:
     theme: simple
@@ -6,8 +8,8 @@ format:
     height: 720
     margin: 0.04
     center: false
-    transition: none
-    background-transition: none
+    transition: fade
+    background-transition: fade
     slide-number: false
     progress: true
     controls: true
@@ -16,90 +18,100 @@ format:
     css: styles.css
 ---
 
-## {.title}
+## {.title-slide}
 
-<div class="title-center">
-  <hr class="title-rule">
-  <div class="deck-title">Cognitive Biases &amp; <span class="flow">Heuristics</span></div>
-  <div class="title-author">Anissa Chan</div>
+<div class="title-wrap">
+  <div class="title-rule"></div>
+  <h1>Cognitive Biases &amp; Heuristics</h1>
+  <div class="author">Anissa Chan</div>
 </div>
 
 ## Anchoring Effect
 
-<div class="two-col slide-grid">
-  <div class="col left-col">
-    <div class="image-card anchor-card">
-      <img src="assets/anchoring-cars.png" alt="Anchoring effect car illustration">
-    </div>
+<div class="two-col">
+  <div class="visual-stack">
+    <img src="assets/anchoring-cars.png" alt="Illustration of the anchoring effect using two car prices.">
   </div>
-  <div class="col right-col">
-    <div class="content-block">
-      <div class="section-label">What is it?</div>
-      <div class="body-copy">Overreliance on first information seen.</div>
+  <div class="text-panel">
+    <div class="label">What is it?</div>
+    <ul>
+      <li>Overreliance on first information seen.</li>
+    </ul>
 
-      <div class="section-label accent">Seen in Data Analysis</div>
-      <div class="body-copy">Updated information is neglected</div>
-    </div>
+    <div class="label gap-top">Seen in Data Analysis</div>
+    <ul>
+      <li>Updated information is neglected</li>
+    </ul>
   </div>
 </div>
 
 ## Confirmation Bias
 
-<div class="two-col slide-grid confirmation-grid">
-  <div class="col left-col">
-    <div class="content-block">
-      <div class="section-label">What is it?</div>
-      <div class="body-copy">Tendency to ignore information that does not affirm preset beliefs</div>
+<div class="two-col alt">
+  <div class="text-panel">
+    <div class="label">What is it?</div>
+    <ul>
+      <li>Tendency to ignore information that does not affirm preset beliefs</li>
+    </ul>
 
-      <div class="section-label accent">Seen in Data Analysis</div>
-      <div class="body-copy">Experiments are run to confirm beliefs<br>New ideas passed over</div>
-    </div>
+    <div class="label gap-top">Seen in Data Analysis</div>
+    <ul>
+      <li>Experiments are ran to confirm beliefs</li>
+      <li>New ideas passed over</li>
+    </ul>
   </div>
-  <div class="col right-col">
-    <div class="image-card venn-card">
-      <img src="assets/confirmation-venn.png" alt="Confirmation bias venn diagram">
-    </div>
-  </div>
-</div>
-
-## {.image-only-slide}
-
-<div class="photo-collage">
-  <div class="image-card blueberry-card"><img src="assets/confirmation-blueberries.jpeg" alt="Blueberries"></div>
-  <div class="image-card gif-card"><img src="assets/confirmation-typing.gif" alt="Typing gif"></div>
-</div>
-
-## Availability Heuristic
-
-<div class="two-col slide-grid availability-grid">
-  <div class="col left-col">
-    <div class="image-stack">
-      <div class="image-card availability-cartoon"><img src="assets/availability-cartoon.png" alt="Availability heuristic cartoon"></div>
-      <div class="image-card availability-table"><img src="assets/availability-table.png" alt="Shark bite table"></div>
-    </div>
-  </div>
-  <div class="col right-col">
-    <div class="content-block availability-copy">
-      <div class="section-label">What is it?</div>
-      <div class="body-copy">Tendency to rely on memorable ideas and events</div>
-
-      <div class="section-label accent">Seen in Data Analysis</div>
-      <div class="body-copy">Overemphasize information that is more memorable<br>Ignore information that is less memorable</div>
-    </div>
+  <div class="visual-stack">
+    <img src="assets/confirmation-venn.png" alt="Diagram showing confirmation bias as overlap between all evidence and our beliefs.">
   </div>
 </div>
 
-## {.band-slide}
+## {.image-only}
 
-<div class="single-word">Con<span class="highlight">clusion</span></div>
-<div class="bottom-photo"><img src="assets/bottom-photo.jpg" alt=""></div>
-
-## Sources {.sources-slide}
-
-<div class="sources-wrap">
-  <p>https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/</p>
-  <p>https://www.pon.harvard.edu/tag/anchoring-effect/</p>
-  <p>https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretatio</p>
-  <p>https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/</p>
+<div class="collage">
+  <img class="img-large" src="assets/confirmation-blueberries.jpeg" alt="Blueberries in plastic containers.">
+  <img class="img-small" src="assets/confirmation-typing.gif" alt="Typing animation used as a visual example.">
 </div>
-<div class="bottom-photo"><img src="assets/bottom-photo.jpg" alt=""></div>
+
+## Availability heuristic
+
+<div class="two-col">
+  <div class="visual-column stack-tight">
+    <img src="assets/availability-cartoon.png" alt="Cartoon illustration about the availability heuristic.">
+    <img src="assets/availability-table.png" alt="Table showing shark bite counts by U.S. state.">
+  </div>
+  <div class="text-panel">
+    <div class="label">What is it?</div>
+    <ul>
+      <li>Tendency to rely on memorable ideas and events</li>
+    </ul>
+
+    <div class="label gap-top">Seen in Data Analysis</div>
+    <ul>
+      <li>Overemphasize information that is more memorable</li>
+      <li>Ignoring information that is less memorable</li>
+    </ul>
+  </div>
+</div>
+
+## Conclusion
+
+<div class="bottom-slide">
+  <div class="headline">
+    <h2>Conclusion</h2>
+  </div>
+  <img class="bottom-banner" src="assets/bottom-photo.jpg" alt="Person writing in a notebook beside a laptop.">
+</div>
+
+## Sources
+
+<div class="bottom-slide">
+  <div class="sources-body">
+    <ul class="source-list">
+      <li><a href="https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/">https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/</a></li>
+      <li><a href="https://www.pon.harvard.edu/tag/anchoring-effect/">https://www.pon.harvard.edu/tag/anchoring-effect/</a></li>
+      <li><a href="https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation">https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation</a></li>
+      <li><a href="https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/">https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/</a></li>
+    </ul>
+  </div>
+  <img class="bottom-banner" src="assets/bottom-photo.jpg" alt="Person writing in a notebook beside a laptop.">
+</div>
