@@ -18,103 +18,87 @@ format:
 
 ## {.title}
 
-<div class="cover-wrap">
-  <div class="cover-title"><span class="flow">Cognitive Biases &amp; Heuristics</span></div>
-  <div class="cover-rule"></div>
-  <div class="cover-author">Anissa Chan</div>
+<div class="title-center">
+  <div class="deck-title">Cognitive Biases &amp; <span class="flow">Heuristics</span></div>
+  <div class="title-author">Anissa Chan</div>
 </div>
 
 ## Anchoring Effect
 
-:::: {.columns}
-::: {.column width="52%"}
-<div class="image-card tall-card">
-  <img src="assets/anchoring-cars.png" alt="Anchoring effect illustration">
-</div>
-:::
+<div class="two-col slide-grid">
+  <div class="col left-col">
+    <div class="image-card anchor-card">
+      <img src="assets/anchoring-cars.png" alt="Anchoring effect car illustration">
+    </div>
+  </div>
+  <div class="col right-col">
+    <div class="content-block">
+      <div class="section-label">What is it?</div>
+      <div class="body-copy">Overreliance on first information seen.</div>
 
-::: {.column width="48%"}
-<div class="content-block">
-  <div class="lead-label">What is it?</div>
-  <ul>
-    <li>Overreliance on first information seen.</li>
-  </ul>
-
-  <div class="analysis-label">Seen in Data Analysis</div>
-  <ul>
-    <li>Updated information is neglected</li>
-  </ul>
+      <div class="section-label accent">Seen in Data Analysis</div>
+      <div class="body-copy">- Updated information is neglected</div>
+    </div>
+  </div>
 </div>
-:::
-::::
 
 ## Confirmation Bias
 
-:::: {.columns}
-::: {.column width="45%"}
-<div class="content-block">
-  <div class="lead-label">What is it?</div>
-  <ul>
-    <li>Tendency to ignore information that does not affirm preset beliefs</li>
-  </ul>
+<div class="two-col slide-grid confirmation-grid">
+  <div class="col left-col">
+    <div class="content-block">
+      <div class="section-label">What is it?</div>
+      <div class="body-copy">Tendency to ignore information that does not affirm preset beliefs</div>
 
-  <div class="analysis-label">Seen in Data Analysis</div>
-  <ul>
-    <li>Experiments are ran to confirm beliefs</li>
-    <li>New ideas passed over</li>
-  </ul>
-</div>
-:::
-
-::: {.column width="55%"}
-<div class="stacked-visuals">
-  <div class="image-card blueberries-card">
-    <img src="assets/confirmation-blueberries.jpeg" alt="Blueberries photo">
+      <div class="section-label accent">Seen in Data Analysis</div>
+      <div class="body-copy">Experiments are ran to confirm beliefs<br>New ideas passed over</div>
+    </div>
   </div>
-  <div class="image-card gif-card">
-    <img src="assets/confirmation-typing.gif" alt="Typing gif">
+  <div class="col right-col">
+    <div class="image-card venn-card">
+      <img src="assets/confirmation-venn.png" alt="Confirmation bias venn diagram">
+    </div>
   </div>
 </div>
-:::
-::::
+
+## {.image-only-slide}
+
+<div class="photo-collage">
+  <div class="image-card blueberry-card"><img src="assets/confirmation-blueberries.jpeg" alt="Blueberries"></div>
+  <div class="image-card gif-card"><img src="assets/confirmation-typing.gif" alt="Typing gif"></div>
+</div>
 
 ## Availability heuristic
 
-:::: {.columns}
-::: {.column width="52%"}
-<div class="image-card table-card">
-  <img src="assets/availability-table.png" alt="Availability heuristic table">
-</div>
-:::
+<div class="two-col slide-grid availability-grid">
+  <div class="col left-col">
+    <div class="image-stack">
+      <div class="image-card availability-cartoon"><img src="assets/availability-cartoon.png" alt="Availability heuristic cartoon"></div>
+      <div class="image-card availability-table"><img src="assets/availability-table.png" alt="Shark bite table"></div>
+    </div>
+  </div>
+  <div class="col right-col">
+    <div class="content-block availability-copy">
+      <div class="section-label">What is it?</div>
+      <div class="body-copy">Tendency to rely on memorable ideas and events</div>
 
-::: {.column width="48%"}
-<div class="content-block">
-  <div class="lead-label">What is it?</div>
-  <ul>
-    <li>Tendency to rely on memorable ideas and events</li>
-  </ul>
-
-  <div class="analysis-label">Seen in Data Analysis</div>
-  <ul>
-    <li>Overemphasize information that is more memorable</li>
-    <li>Ignoring information that is less memorable</li>
-  </ul>
-</div>
-:::
-::::
-
-## Conclusion
-
-<div class="simple-end-slide">
-  <div class="simple-end-title">Conclusion</div>
+      <div class="section-label accent">Seen in Data Analysis</div>
+      <div class="body-copy">Overemphasize information that is more memorable<br>Ignoring information that is less memorable</div>
+    </div>
+  </div>
 </div>
 
-## Sources
+## {.band-slide}
+
+<div class="single-word">Conclusion</div>
+<div class="bottom-photo"><img src="assets/bottom-photo.jpg" alt=""></div>
+
+## Sources {.sources-slide}
 
 <div class="sources-wrap">
   <p>https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/</p>
   <p>https://www.pon.harvard.edu/tag/anchoring-effect/</p>
   <p>https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretatio</p>
-  <p>https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/</p>
-  <p>n</p>
+  <p>https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/ </p>
 </div>
+<div class="bottom-photo"><img src="assets/bottom-photo.jpg" alt=""></div>
