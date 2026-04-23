@@ -68,10 +68,10 @@ format:
 
 ::: {.column width="55%"}
 <div class="stacked-visuals">
-  <div class="image-card blueberries-card">
+  <div class="image-card blueberries-card fragment fade-in" data-fragment-index="1">
     <img src="assets/confirmation-blueberries.jpeg" alt="Blueberries photo">
   </div>
-  <div class="image-card gif-card">
+  <div class="image-card gif-card fragment fade-in" data-fragment-index="2">
     <img src="assets/confirmation-typing.gif" alt="Typing gif">
   </div>
 </div>
@@ -82,7 +82,7 @@ format:
 
 :::: {.columns}
 ::: {.column width="52%"}
-<div class="image-card table-card">
+<div class="image-card table-card fragment fade-in" data-fragment-index="1">
   <img src="assets/availability-table.png" alt="Availability heuristic table">
 </div>
 :::
@@ -105,7 +105,6 @@ format:
 
 ## Conclusion {.band-slide .conclusion-slide}
 
-<div class="band-title-only">Conclusion</div>
 <div class="bottom-band"><img src="assets/bottom-photo.jpg" alt="Bottom photo"></div>
 
 ## Sources {.band-slide .sources-slide}
