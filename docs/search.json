@@ -189,13 +189,6 @@
     "text": "10 Conclusion\nThis simple CTA experiment turns out to be a compact tour of classical frequentist statistics.\n\nModeling each visitor as a Bernoulli draw gave us a clean estimand: the difference in conversion rates.\nThe Law of Large Numbers showed why the sample difference in means is a sensible estimator.\nThe bootstrap and the analytical formula both quantified uncertainty through a standard error, and agreed closely with each other.\nThe Central Limit Theorem justified approximate Normal inference even though the raw data were binary.\nHypothesis testing translated the estimate into a z-statistic and a p-value.\nRegression reproduced the same comparison in a framework that scales naturally to richer experimental designs.\nAnd the peeking simulation showed how easy it is to break nominal Type I error guarantees by repeatedly checking for significance.\n\nThat is the frequentist mindset in one example: probability is about repeated sampling, estimators are random because samples are random, and the reliability of our conclusions depends as much on the procedure we use as on the specific numbers we observe."
   },
   {
-    "objectID": "projects/project3/slides.html#section",
-    "href": "projects/project3/slides.html#section",
-    "title": "Cognitive Biases & Heuristics",
-    "section": "",
-    "text": "Cognitive Biases & Heuristics\n\n\nAnissa Chan"
-  },
-  {
     "objectID": "projects/project3/slides.html#anchoring-effect",
     "href": "projects/project3/slides.html#anchoring-effect",
     "title": "Cognitive Biases & Heuristics",
@@ -228,6 +221,6 @@
     "href": "projects/project3/slides.html#sources",
     "title": "Cognitive Biases & Heuristics",
     "section": "Sources",
-    "text": "Sources\n\n\n&lt;ul class=\"source-list\"&gt;\n  &lt;li&gt;&lt;a href=\"https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/\"&gt;Florida Museum: Yearly Worldwide Shark Attack Summary&lt;/a&gt;&lt;/li&gt;\n  &lt;li&gt;&lt;a href=\"https://www.pon.harvard.edu/tag/anchoring-effect/\"&gt;Harvard PON: Anchoring Effect&lt;/a&gt;&lt;/li&gt;\n  &lt;li&gt;&lt;a href=\"https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation\"&gt;UPenn LPS: Cognitive Bias and Data&lt;/a&gt;&lt;/li&gt;\n  &lt;li&gt;&lt;a href=\"https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/\"&gt;Oxford Review: Confirmation Bias&lt;/a&gt;&lt;/li&gt;\n&lt;/ul&gt;"
+    "text": "Sources\n\n\n\nFlorida Museum: Yearly Worldwide Shark Attack Summary\nHarvard PON: Anchoring Effect\nUPenn LPS: Cognitive Bias and Data\nOxford Review: Confirmation Bias"
   }
 ]

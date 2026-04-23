@@ -93,14 +93,14 @@ format:
 
 ## Sources
 
-<div class="bottom-slide">
-  <div class="sources-body">
-    <ul class="source-list">
-      <li><a href="https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/">Florida Museum: Yearly Worldwide Shark Attack Summary</a></li>
-      <li><a href="https://www.pon.harvard.edu/tag/anchoring-effect/">Harvard PON: Anchoring Effect</a></li>
-      <li><a href="https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation">UPenn LPS: Cognitive Bias and Data</a></li>
-      <li><a href="https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/">Oxford Review: Confirmation Bias</a></li>
-    </ul>
-  </div>
-  <img class="bottom-banner" src="assets/bottom-photo.jpg" alt="Person writing in a notebook beside a laptop.">
+<div class="bottom-slide" style="display: flex; align-items: center; gap: 20px;">
+<div class="sources-body">
+
+- [Florida Museum: Yearly Worldwide Shark Attack Summary](https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/)
+- [Harvard PON: Anchoring Effect](https://www.pon.harvard.edu/tag/anchoring-effect/)
+- [UPenn LPS: Cognitive Bias and Data](https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation)
+- [Oxford Review: Confirmation Bias](https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/)
+
+</div>
+<img class="bottom-banner" src="assets/bottom-photo.jpg" alt="Person writing in a notebook beside a laptop.">
 </div>
