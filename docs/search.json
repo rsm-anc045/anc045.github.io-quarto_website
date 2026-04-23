@@ -189,45 +189,59 @@
     "text": "10 Conclusion\nThis simple CTA experiment turns out to be a compact tour of classical frequentist statistics.\n\nModeling each visitor as a Bernoulli draw gave us a clean estimand: the difference in conversion rates.\nThe Law of Large Numbers showed why the sample difference in means is a sensible estimator.\nThe bootstrap and the analytical formula both quantified uncertainty through a standard error, and agreed closely with each other.\nThe Central Limit Theorem justified approximate Normal inference even though the raw data were binary.\nHypothesis testing translated the estimate into a z-statistic and a p-value.\nRegression reproduced the same comparison in a framework that scales naturally to richer experimental designs.\nAnd the peeking simulation showed how easy it is to break nominal Type I error guarantees by repeatedly checking for significance.\n\nThat is the frequentist mindset in one example: probability is about repeated sampling, estimators are random because samples are random, and the reliability of our conclusions depends as much on the procedure we use as on the specific numbers we observe."
   },
   {
-    "objectID": "projects/project3/slides.html#section",
-    "href": "projects/project3/slides.html#section",
+    "objectID": "projects/project3/slides.html#why-this-matters-in-analytics",
+    "href": "projects/project3/slides.html#why-this-matters-in-analytics",
     "title": "quarto_website",
-    "section": "",
-    "text": "Cognitive Biases & Heuristics\n\n\n\n\n\nAnissa Chan"
+    "section": "Why this matters in analytics",
+    "text": "Why this matters in analytics\n\n\nBias is normal\nBias affects how we interpret patterns, frame questions, and judge results.\n\n\nData is not immune\nEven with data, analysts can still overweight certain evidence and miss better explanations.\n\n\nBetter process helps\nGood experimental design, critical thinking, and deliberate review reduce the risk.\n\n\n\nMain idea: the goal is not to eliminate human judgment, but to recognize where it can distort analysis."
   },
   {
     "objectID": "projects/project3/slides.html#anchoring-effect",
     "href": "projects/project3/slides.html#anchoring-effect",
     "title": "quarto_website",
     "section": "Anchoring Effect",
-    "text": "Anchoring Effect\n\n\n\n\n\n\n\n\nWhat is it?\n\n\n\nOverreliance on first information seen.\n\n\n\nSeen in Data Analysis\n\n\n\nUpdated information is neglected"
+    "text": "Anchoring Effect\n\n\n\nWhat is it?\nOverreliance on the first piece of information seen.\nSeen in data analysis\n\nEarly assumptions can shape later interpretation.\nUpdated evidence may get discounted.\nInitial benchmarks can make later values feel misleadingly high or low.\n\n\n\nExample: if someone first sees a car priced at 60k, then 30k feels like a bargain. If they first see 30k, it can feel expensive.\n\n\n\n\n\nThe anchoring effect is relying too heavily on the first piece of information offered. In analytics, this can happen when we anchor on an early metric, an initial forecast, or a first read of a dataset and then underreact to newer evidence."
   },
   {
     "objectID": "projects/project3/slides.html#confirmation-bias",
     "href": "projects/project3/slides.html#confirmation-bias",
     "title": "quarto_website",
     "section": "Confirmation Bias",
-    "text": "Confirmation Bias\n\n\n\n\nWhat is it?\n\n\n\nTendency to ignore information that does not affirm preset beliefs\n\n\n\nSeen in Data Analysis\n\n\n\nExperiments are ran to confirm beliefs\n\n\nNew ideas passed over\n\n\n\n\n\n\n&lt;img src=\"assets/confirmation-venn.png\" alt=\"Confirmation bias venn diagram\"&gt;\n\n\n&lt;img src=\"assets/confirmation-blueberries.jpeg\" alt=\"Blueberries photo\"&gt;\n\n\n&lt;img src=\"assets/confirmation-typing.gif\" alt=\"Typing gif\"&gt;"
+    "text": "Confirmation Bias\n\n\n\nWhat is it?\nThe tendency to seek, interpret, and remember information that supports existing beliefs.\nSeen in data analysis\n\nExperiments may be designed to confirm what we already think.\nConflicting results may get ignored or explained away.\nNew ideas can be passed over before they are fully explored.\n\n\n\nEveryday example: searching until you find the answer you wanted all along.\n\n\n\n\n\nConfirmation bias is the tendency to seek and interpret information in ways that confirm pre-existing beliefs. A simple example is searching online until you find a result that supports what you wanted to believe. In analytics, this can show up in both experiment design and interpretation."
+  },
+  {
+    "objectID": "projects/project3/slides.html#confirmation-bias-example",
+    "href": "projects/project3/slides.html#confirmation-bias-example",
+    "title": "quarto_website",
+    "section": "Confirmation Bias Example",
+    "text": "Confirmation Bias Example\n\n\n\n\n\n\nWhy this example fits: we may keep searching until we find an answer that supports what we already wanted to believe.\n\n\n\nA simple everyday example is checking how long blueberries last and scrolling until you find a result that matches what you hoped to see. That is confirmation bias in action."
   },
   {
     "objectID": "projects/project3/slides.html#availability-heuristic",
     "href": "projects/project3/slides.html#availability-heuristic",
     "title": "quarto_website",
-    "section": "Availability heuristic",
-    "text": "Availability heuristic\n\n\n\n\n&lt;img src=\"assets/availability-cartoon.png\" alt=\"Availability heuristic illustration\"&gt;\n\n\n&lt;img src=\"assets/availability-table.png\" alt=\"Availability heuristic table\"&gt;\n\n\n\n\n\nWhat is it?\n\n\n\nTendency to rely on memorable ideas and events\n\n\n\nSeen in Data Analysis\n\n\n\nOveremphasize information that is more memorable\n\n\nIgnoring information that is less memorable"
+    "section": "Availability Heuristic",
+    "text": "Availability Heuristic\n\n\n\n\n\n\nWhat is it?\nThe tendency to rely on memorable or vivid examples when making judgments.\nSeen in data analysis\n\nStriking events can feel more common than they really are.\nAnalysts may overemphasize dramatic findings.\nLess memorable but still important evidence can be overlooked.\n\n\n\nExample: shark attacks feel common because they are memorable, even though actual incidents are rare.\n\n\n\nThe availability heuristic causes us to lean on examples that are easy to recall. In practice, that often means surprising, emotional, or highly publicized events. In data work, this can push us toward the most memorable result rather than the most representative one."
+  },
+  {
+    "objectID": "projects/project3/slides.html#how-to-reduce-bias-in-practice",
+    "href": "projects/project3/slides.html#how-to-reduce-bias-in-practice",
+    "title": "quarto_website",
+    "section": "How to reduce bias in practice",
+    "text": "How to reduce bias in practice\n\n\nRevisit first assumptions\nPause and ask whether the original benchmark still makes sense.\n\n\nLook for disconfirming evidence\nActively search for information that challenges your preferred explanation.\n\n\nUse stronger methods\nRandomization, blind testing, and clear experimental design reduce bias.\n\n\nReview full context\nConsider outliers, alternatives, and less memorable evidence before concluding.\n\n\n\nConclusion: biases and heuristics are part of everyday thinking, so stronger analysis depends on recognizing them and building guardrails against them.\n\n\nIn conclusion, biases and heuristics are part of everyday thinking. As analysts and experimenters, we need to catch ourselves when they appear and use good process, like critical thinking, randomization, blind testing, and broader evidence review, to reduce their impact."
   },
   {
     "objectID": "projects/project3/slides.html#conclusion",
     "href": "projects/project3/slides.html#conclusion",
     "title": "quarto_website",
     "section": "Conclusion",
-    "text": "Conclusion"
+    "text": "Conclusion\n\nBiases and heuristics are part of everyday thinking. Better analysis comes from recognizing them early and building habits that reduce their effect.\n\n\n\nI hope that knowing more about these effects will help you in your analytics journey. Thank you."
   },
   {
     "objectID": "projects/project3/slides.html#sources",
     "href": "projects/project3/slides.html#sources",
     "title": "quarto_website",
     "section": "Sources",
-    "text": "Sources\n\n\nhttps://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/\n\n\nhttps://www.pon.harvard.edu/tag/anchoring-effect/\n\n\nhttps://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretatio\n\n\nhttps://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/\n\n\nn"
+    "text": "Sources\n\n\nFlorida Museum: Yearly Worldwide Shark Attack Summary\nHarvard PON: Anchoring Effect\nPenn SAS: Cognitive Bias and Data\nOxford Review: Confirmation Bias"
   }
 ]

@@ -6,8 +6,8 @@ format:
     height: 720
     margin: 0.04
     center: false
-    transition: fade
-    background-transition: fade
+    transition: none
+    background-transition: none
     slide-number: false
     progress: true
     controls: true
@@ -16,115 +16,230 @@ format:
     css: styles.css
 ---
 
-## {.title}
+::: {.hero}
+::: {.eyebrow}
+Data analytics presentation
+:::
 
-<div class="cover-wrap">
-  <div class="cover-title"><span class="flow">Cognitive Biases &amp; Heuristics</span></div>
-  <div class="cover-rule"></div>
-  <div class="cover-author">Anissa Chan</div>
-</div>
+::: {.hero-title}
+Cognitive Biases & Heuristics
+:::
+
+::: {.hero-subtitle}
+How anchoring, confirmation bias, and availability heuristic can shape analysis, decisions, and experiments.
+:::
+
+:::: {.hero-footer}
+::: {.hero-name}
+Anissa Chan
+:::
+
+::: {.hero-tag}
+MGTA 495
+:::
+::::
+:::
+
+::: {.notes}
+Everyone has some sort of bias. Whether that be preferring cheeseburgers over hotdogs or fantasy over sci-fi. It affects everything: who we hang out with, what we believe, how we interact with the world. Data is no different. In this presentation, I will focus on three common examples: anchoring effect, confirmation bias, and the availability heuristic.
+:::
+
+---
+
+## Why this matters in analytics
+
+:::: {.grid-3}
+::: {.mini-card}
+### Bias is normal
+Bias affects how we interpret patterns, frame questions, and judge results.
+:::
+
+::: {.mini-card}
+### Data is not immune
+Even with data, analysts can still overweight certain evidence and miss better explanations.
+:::
+
+::: {.mini-card}
+### Better process helps
+Good experimental design, critical thinking, and deliberate review reduce the risk.
+:::
+::::
+
+::: {.takeaway}
+**Main idea:** the goal is not to eliminate human judgment, but to recognize where it can distort analysis.
+:::
+
+---
 
 ## Anchoring Effect
 
 :::: {.columns}
-::: {.column width="52%"}
-<div class="image-card tall-card">
-  <img src="assets/anchoring-cars.png" alt="Anchoring effect illustration">
-</div>
+::: {.column width="54%"}
+::: {.concept-card}
+### What is it?
+Overreliance on the first piece of information seen.
+
+### Seen in data analysis
+- Early assumptions can shape later interpretation.
+- Updated evidence may get discounted.
+- Initial benchmarks can make later values feel misleadingly high or low.
 :::
 
-::: {.column width="48%"}
-<div class="content-block">
-  <div class="lead-label">What is it?</div>
-  <ul>
-    <li>Overreliance on first information seen.</li>
-  </ul>
+::: {.speaker-prompt}
+**Example:** if someone first sees a car priced at 60k, then 30k feels like a bargain. If they first see 30k, it can feel expensive.
+:::
+:::
 
-  <div class="analysis-label">Seen in Data Analysis</div>
-  <ul>
-    <li>Updated information is neglected</li>
-  </ul>
-</div>
+::: {.column width="46%"}
+![](assets/anchoring-cars.png){fig-alt="Anchoring effect car pricing example" .feature-figure}
 :::
 ::::
+
+::: {.notes}
+The anchoring effect is relying too heavily on the first piece of information offered. In analytics, this can happen when we anchor on an early metric, an initial forecast, or a first read of a dataset and then underreact to newer evidence.
+:::
+
+---
 
 ## Confirmation Bias
 
 :::: {.columns}
-::: {.column width="45%"}
-<div class="content-block">
-  <div class="lead-label">What is it?</div>
-  <ul>
-    <li>Tendency to ignore information that does not affirm preset beliefs</li>
-  </ul>
+::: {.column width="42%"}
+::: {.concept-card}
+### What is it?
+The tendency to seek, interpret, and remember information that supports existing beliefs.
 
-  <div class="analysis-label">Seen in Data Analysis</div>
-  <ul>
-    <li>Experiments are ran to confirm beliefs</li>
-    <li>New ideas passed over</li>
-  </ul>
-</div>
+### Seen in data analysis
+- Experiments may be designed to confirm what we already think.
+- Conflicting results may get ignored or explained away.
+- New ideas can be passed over before they are fully explored.
 :::
 
-::: {.column width="55%"}
-<div class="visual-panel confirmation-panel">
-  <div class="image-card confirmation-base">
-    <img src="assets/confirmation-venn.png" alt="Confirmation bias venn diagram">
-  </div>
+::: {.speaker-prompt}
+**Everyday example:** searching until you find the answer you wanted all along.
+:::
+:::
 
-  <div class="image-card confirmation-overlay blueberries-overlay fragment fade-in" data-fragment-index="1">
-    <img src="assets/confirmation-blueberries.jpeg" alt="Blueberries photo">
-  </div>
-
-  <div class="image-card confirmation-overlay typing-overlay fragment fade-in" data-fragment-index="2">
-    <img src="assets/confirmation-typing.gif" alt="Typing gif">
-  </div>
-</div>
+::: {.column width="58%"}
+![](assets/confirmation-venn.png){fig-alt="Confirmation bias diagram" .feature-figure}
 :::
 ::::
 
-## Availability heuristic
+::: {.notes}
+Confirmation bias is the tendency to seek and interpret information in ways that confirm pre-existing beliefs. A simple example is searching online until you find a result that supports what you wanted to believe. In analytics, this can show up in both experiment design and interpretation.
+:::
+
+---
+
+## Confirmation Bias Example
 
 :::: {.columns}
-::: {.column width="52%"}
-<div class="visual-panel availability-panel">
-  <div class="image-card availability-base">
-    <img src="assets/availability-cartoon.png" alt="Availability heuristic illustration">
-  </div>
-
-  <div class="image-card availability-overlay fragment fade-in" data-fragment-index="1">
-    <img src="assets/availability-table.png" alt="Availability heuristic table">
-  </div>
-</div>
+::: {.column width="66%"}
+![](assets/confirmation-blueberries.jpeg){fig-alt="Blueberries photo" .feature-figure}
 :::
 
-::: {.column width="48%"}
-<div class="content-block">
-  <div class="lead-label">What is it?</div>
-  <ul>
-    <li>Tendency to rely on memorable ideas and events</li>
-  </ul>
+::: {.column width="34%"}
+![](assets/confirmation-typing.gif){fig-alt="Typing GIF" .feature-figure .feature-figure-small}
 
-  <div class="analysis-label">Seen in Data Analysis</div>
-  <ul>
-    <li>Overemphasize information that is more memorable</li>
-    <li>Ignoring information that is less memorable</li>
-  </ul>
-</div>
+::: {.speaker-prompt}
+**Why this example fits:** we may keep searching until we find an answer that supports what we already wanted to believe.
+:::
 :::
 ::::
 
-## Conclusion {.band-slide .conclusion-slide}
+::: {.notes}
+A simple everyday example is checking how long blueberries last and scrolling until you find a result that matches what you hoped to see. That is confirmation bias in action.
+:::
 
-<div class="bottom-band"><img src="assets/bottom-photo.jpg" alt="Bottom photo"></div>
+---
 
-## Sources {.band-slide .sources-slide}
+## Availability Heuristic
 
-<div class="sources-wrap">
-  <p>https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/</p>
-  <p>https://www.pon.harvard.edu/tag/anchoring-effect/</p>
-  <p>https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretatio</p>
-  <p>https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/</p>
-  <p>n</p>
-</div>
-<div class="bottom-band"><img src="assets/bottom-photo.jpg" alt="Bottom photo"></div>
+:::: {.columns}
+::: {.column width="42%"}
+![](assets/availability-cartoon.png){fig-alt="Availability heuristic illustration" .feature-figure}
+
+![](assets/availability-table.png){fig-alt="Shark attack table" .feature-figure .feature-figure-small}
+:::
+
+::: {.column width="58%"}
+::: {.concept-card}
+### What is it?
+The tendency to rely on memorable or vivid examples when making judgments.
+
+### Seen in data analysis
+- Striking events can feel more common than they really are.
+- Analysts may overemphasize dramatic findings.
+- Less memorable but still important evidence can be overlooked.
+:::
+
+::: {.speaker-prompt}
+**Example:** shark attacks feel common because they are memorable, even though actual incidents are rare.
+:::
+:::
+::::
+
+::: {.notes}
+The availability heuristic causes us to lean on examples that are easy to recall. In practice, that often means surprising, emotional, or highly publicized events. In data work, this can push us toward the most memorable result rather than the most representative one.
+:::
+
+---
+
+## How to reduce bias in practice
+
+:::: {.grid-2}
+::: {.action-card}
+### Revisit first assumptions
+Pause and ask whether the original benchmark still makes sense.
+:::
+
+::: {.action-card}
+### Look for disconfirming evidence
+Actively search for information that challenges your preferred explanation.
+:::
+
+::: {.action-card}
+### Use stronger methods
+Randomization, blind testing, and clear experimental design reduce bias.
+:::
+
+::: {.action-card}
+### Review full context
+Consider outliers, alternatives, and less memorable evidence before concluding.
+:::
+::::
+
+::: {.takeaway}
+**Conclusion:** biases and heuristics are part of everyday thinking, so stronger analysis depends on recognizing them and building guardrails against them.
+:::
+
+::: {.notes}
+In conclusion, biases and heuristics are part of everyday thinking. As analysts and experimenters, we need to catch ourselves when they appear and use good process, like critical thinking, randomization, blind testing, and broader evidence review, to reduce their impact.
+:::
+
+---
+
+## Conclusion
+
+::: {.takeaway}
+Biases and heuristics are part of everyday thinking. Better analysis comes from recognizing them early and building habits that reduce their effect.
+:::
+
+![](assets/bottom-photo.jpg){fig-alt="Person writing beside a laptop" .feature-figure}
+
+::: {.notes}
+I hope that knowing more about these effects will help you in your analytics journey. Thank you.
+:::
+
+---
+
+## Sources
+
+::: {.sources-grid}
+- [Florida Museum: Yearly Worldwide Shark Attack Summary](https://www.floridamuseum.ufl.edu/shark-attacks/yearly-worldwide-summary/)
+- [Harvard PON: Anchoring Effect](https://www.pon.harvard.edu/tag/anchoring-effect/)
+- [Penn SAS: Cognitive Bias and Data](https://lpsonline.sas.upenn.edu/features/cognitive-bias-and-data-how-human-psychology-impacts-data-interpretation)
+- [Oxford Review: Confirmation Bias](https://oxford-review.com/the-oxford-review-dei-diversity-equity-and-inclusion-dictionary/confirmation-bias-definition-and-explanation/)
+:::
+
+![](assets/bottom-photo.jpg){fig-alt="Person writing beside a laptop" .feature-figure .feature-figure-small}
