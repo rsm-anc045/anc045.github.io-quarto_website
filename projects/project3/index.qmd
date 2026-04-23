@@ -1,9 +1,5 @@
 ---
 title: "Cognitive Biases & Heuristics"
-description: "A Quarto Reveal presentation on anchoring effect, confirmation bias, and availability heuristic."
-format: html
 ---
 
-## Project 3
-
-[Open the presentation](slides.html)
+[Open slides](slides.html)
