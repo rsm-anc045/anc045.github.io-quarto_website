@@ -67,11 +67,16 @@ format:
 :::
 
 ::: {.column width="55%"}
-<div class="stacked-visuals">
-  <div class="image-card blueberries-card fragment fade-in" data-fragment-index="1">
+<div class="visual-panel confirmation-panel">
+  <div class="image-card confirmation-base">
+    <img src="assets/confirmation-venn.png" alt="Confirmation bias venn diagram">
+  </div>
+
+  <div class="image-card confirmation-overlay blueberries-overlay fragment fade-in" data-fragment-index="1">
     <img src="assets/confirmation-blueberries.jpeg" alt="Blueberries photo">
   </div>
-  <div class="image-card gif-card fragment fade-in" data-fragment-index="2">
+
+  <div class="image-card confirmation-overlay typing-overlay fragment fade-in" data-fragment-index="2">
     <img src="assets/confirmation-typing.gif" alt="Typing gif">
   </div>
 </div>
@@ -82,8 +87,14 @@ format:
 
 :::: {.columns}
 ::: {.column width="52%"}
-<div class="image-card table-card fragment fade-in" data-fragment-index="1">
-  <img src="assets/availability-table.png" alt="Availability heuristic table">
+<div class="visual-panel availability-panel">
+  <div class="image-card availability-base">
+    <img src="assets/availability-cartoon.png" alt="Availability heuristic illustration">
+  </div>
+
+  <div class="image-card availability-overlay fragment fade-in" data-fragment-index="1">
+    <img src="assets/availability-table.png" alt="Availability heuristic table">
+  </div>
 </div>
 :::
 
