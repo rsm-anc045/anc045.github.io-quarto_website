@@ -193,7 +193,7 @@
     "href": "projects/project3/slides.html#why-i-chose-this-topic",
     "title": "Cognitive Biases & Heuristics",
     "section": "Why I chose this topic?",
-    "text": "Why I chose this topic?\n\n\n&lt;ul&gt;\n  &lt;li&gt;Last class experiments with selection bias&lt;/li&gt;\n  &lt;li&gt;Experiment for Data Analytics class last quarter&lt;/li&gt;\n&lt;/ul&gt;\n\n\n&lt;img src=\"assets/ab-test-topic.jpg\" alt=\"A/B test illustration comparing Option A and Option B.\"&gt;"
+    "text": "Why I chose this topic?\n\n\n\nLast class experiments with selection bias\nExperiment for Data Analytics class last quarter\n\n\n\n\n\n\nA/B test illustration comparing Option A and Option B."
   },
   {
     "objectID": "projects/project3/slides.html#anchoring-effect",
@@ -214,7 +214,7 @@
     "href": "projects/project3/slides.html#confirmation-bias-1",
     "title": "Cognitive Biases & Heuristics",
     "section": "Confirmation Bias",
-    "text": "Confirmation Bias\n\n\n\nWhat is it?\n\n\n\nTendency to ignore information that does not affirm preset beliefs.\n\n\n\n\n\n\nAvailability Heuristic\n\n\n\n\n\n\nWhat is it?\n\n\n\nTendency to rely on memorable ideas and events.\n\n\n\n\n\n\nConclusion\n\n\n\n\n\nSources\n\n\n\nFlorida Museum: Yearly Worldwide Shark Attack Summary\nHarvard PON: Anchoring Effect\nUPenn LPS: Cognitive Bias and Data\nOxford Review: Confirmation Bias"
+    "text": "Confirmation Bias\n\n\n\nWhat is it?\n\n\n\nTendency to ignore information that does not affirm preset beliefs."
   },
   {
     "objectID": "projects/project3/slides.html#availability-heuristic",

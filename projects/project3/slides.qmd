@@ -20,17 +20,15 @@ format:
 
 ## Why I chose this topic?
 
-<div class="two-col">
-  <div class="text-panel">
-    <ul>
-      <li>Last class experiments with selection bias</li>
-      <li>Experiment for Data Analytics class last quarter</li>
-    </ul>
-  </div>
-  <div class="visual-stack">
-    <img src="assets/ab-test-topic.jpg" alt="A/B test illustration comparing Option A and Option B.">
-  </div>
-</div>
+::: {.two-col}
+::: {.text-panel}
+- Last class experiments with selection bias
+- Experiment for Data Analytics class last quarter
+:::
+::: {.visual-stack}
+![A/B test illustration comparing Option A and Option B.](assets/ab-test-topic.jpg)
+:::
+:::
 
 ## Anchoring Effect
 
@@ -49,7 +47,7 @@ format:
 
 ## Confirmation Bias
 
-<div class="two-col alt"><div class="text-panel"><div class="label">What is it?</div><ul><li>Tendency to ignore information that does not affirm preset beliefs.</div><div class="visual-stack"><img src="assets/confirmation-venn.png" alt="Diagram showing confirmation bias as overlap between all evidence and our beliefs."></div></div>
+<div class="two-col alt"><div class="text-panel"><div class="label">What is it?</div><ul><li>Tendency to ignore information that does not affirm preset beliefs.</li></ul></div><div class="visual-stack"><img src="assets/confirmation-venn.png" alt="Diagram showing confirmation bias as overlap between all evidence and our beliefs."></div></div>
 
 ## Availability Heuristic
 
