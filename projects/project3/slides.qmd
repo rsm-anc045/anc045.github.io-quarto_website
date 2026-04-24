@@ -20,15 +20,17 @@ format:
 
 ## Why I chose this topic?
 
-::: {.two-col}
-::: {.text-panel}
-- Last class experiments with selection bias
-- Experiment for Data Analytics class last quarter
-:::
-::: {.visual-stack}
-![A/B test illustration comparing Option A and Option B.](assets/ab-test-topic.jpg)
-:::
-:::
+<div class="two-col">
+  <div class="text-panel">
+    <ul>
+      <li>Last class experiments with selection bias</li>
+      <li>Experiment for Data Analytics class last quarter</li>
+    </ul>
+  </div>
+  <div class="visual-stack">
+    <img src="assets/ab-test-topic.jpg" alt="A/B test illustration comparing Option A and Option B.">
+  </div>
+</div>
 
 ## Anchoring Effect
 
