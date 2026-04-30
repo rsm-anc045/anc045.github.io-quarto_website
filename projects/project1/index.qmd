@@ -26,9 +26,9 @@ import statsmodels.api as sm
 from IPython.display import Markdown, display
 
 # ── Shared colour palette ────────────────────────────────────────────────────
-BLUE   = "#2563EB"   # CTA A / primary
-ORANGE = "#EA580C"   # CTA B / secondary
-GRAY   = "#6B7280"   # reference lines
+BLUE   = "#1D4ED8"   # CTA A / primary
+ORANGE = "#F59E0B"   # CTA B / secondary
+GRAY   = "#9CA3AF"   # reference lines
 
 # ── Base matplotlib style ────────────────────────────────────────────────────
 plt.rcParams.update({
