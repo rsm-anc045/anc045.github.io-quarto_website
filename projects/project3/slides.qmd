@@ -3,6 +3,7 @@ title: "Cognitive Biases & Heuristics"
 author: "Anissa Chan"
 format:
   revealjs:
+    embed-resources: true
     theme: simple
     width: 1280
     height: 720
