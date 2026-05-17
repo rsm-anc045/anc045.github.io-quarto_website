@@ -37,5 +37,11 @@
   },
   "slides.qmd": {
     "slides.html": "cd034171"
+  },
+  "projects/project4/index.qmd": {
+    "index.html": "cbcaf4d5"
+  },
+  "projects/project3/Chan_Anissa-cognitivebiases.qmd": {
+    "Chan_Anissa-cognitivebiases.html": "8d7468c4"
   }
 }
