@@ -1,7 +1,7 @@
 ---
 title: "Poisson Regression and Maximum Likelihood Estimation"
 subtitle: "A Case Study of Blueprinty's Software and Patent Awards"
-author: "Your Name"
+author: "Anissa Chan"
 date: today
 format:
   html:
