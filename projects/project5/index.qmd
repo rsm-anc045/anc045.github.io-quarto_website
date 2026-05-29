@@ -2,7 +2,7 @@
 title: "MaxDiff Analysis of MSBA Class Preferences"
 subtitle: "Counts, MLE, and Bayesian estimation of the MNL model"
 author: "Anissa Chan"
-date: today
+date: May 28, 2026
 categories: [marketing analytics, maxdiff, conjoint, multinomial logit, bayesian]
 format:
   html:
